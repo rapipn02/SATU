@@ -38,6 +38,20 @@ export function verifyToken(token: string): Principal {
   return { id: String(claims.sub), role: claims.role, src: claims.src };
 }
 
+/**
+ * Short-lived key for a download link that a browser opens without the Authorization header (PDF report).
+ * It has no role, so it can never be used as a login token, and login tokens are rejected here.
+ */
+export function signDownloadKey(teacherId: string): string {
+  return jwt.sign({ purpose: "pdf" }, config.JWT_SECRET, { subject: teacherId, expiresIn: 5 * 60 });
+}
+
+export function verifyDownloadKey(key: string): string {
+  const claims = jwt.verify(key, config.JWT_SECRET, { algorithms: ["HS256"] }) as jwt.JwtPayload;
+  if (claims.purpose !== "pdf" || claims.role) throw new Error("bukan kunci unduhan");
+  return String(claims.sub);
+}
+
 /** Invite links carry the raw token; the database stores only its SHA-256 (hex). */
 export function newInviteToken(): { token: string; hash: string } {
   const token = randomBytes(24).toString("base64url");

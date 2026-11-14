@@ -29,3 +29,19 @@ export function recordFailure(key: string): void {
 export function clearFailures(key: string): void {
   failures.delete(key);
 }
+
+const ASK_MAX = 30;
+const ASK_WINDOW_MS = 60 * 60 * 1000;
+// ponytail: same in-memory caveat as above; with pm2 cluster x4 the real cap is up to 4x ASK_MAX.
+const asked = new Map<string, number[]>();
+
+/** Each question costs an LLM call: at most ASK_MAX per user per hour, then 429. */
+export function assertAskQuota(userId: string): void {
+  const now = Date.now();
+  const recent = (asked.get(userId) ?? []).filter((t) => now - t < ASK_WINDOW_MS);
+  if (recent.length >= ASK_MAX) {
+    throw new AppError(429, "Sudah banyak pertanyaan dalam satu jam terakhir. Coba tanya lagi nanti, ya.");
+  }
+  recent.push(now);
+  asked.set(userId, recent);
+}

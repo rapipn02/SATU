@@ -1,6 +1,9 @@
 import { Router } from "express";
 import { z } from "zod";
-import { route, TAGS } from "./lib/route";
+import { AppError } from "./lib/errors";
+import { assertAskQuota } from "./lib/login-guard";
+import { authenticate, FileResult, route, TAGS } from "./lib/route";
+import { signDownloadKey, verifyDownloadKey } from "./lib/security";
 import * as s from "./schemas";
 import * as accounts from "./services/accounts";
 import * as ai from "./services/ai";
@@ -9,6 +12,9 @@ import * as homework from "./services/homework";
 import * as parents from "./services/parents";
 import * as practice from "./services/practice";
 import * as rewards from "./services/rewards";
+import { classReportPdf } from "./services/report-pdf";
+
+const reportQuery = s.classroomQuery.extend(s.chartQuery.shape).extend({ studentId: z.uuid().optional() });
 
 export function apiRouter(): Router {
   const r = Router();
@@ -164,6 +170,39 @@ export function apiRouter(): Router {
     },
   });
   route(r, {
+    method: "get", path: "/dashboard/class/report-link", tag: TAGS.guru, auth: "teacher",
+    summary:
+      "Link unduh PDF laporan yang bisa langsung dibuka di browser/HP tanpa header login (berlaku 5 menit). " +
+      "Query sama dengan report.pdf.",
+    query: reportQuery,
+    handler: ({ req, user }) => {
+      const q = new URLSearchParams(req.query as Record<string, string>);
+      q.set("key", signDownloadKey(user.id));
+      const proto = req.get("x-forwarded-proto")?.split(",")[0] ?? req.protocol; // behind nginx on the VPS
+      return { url: `${proto}://${req.get("host")}/api/dashboard/class/report.pdf?${q}`, expiresInSeconds: 300 };
+    },
+  });
+  route(r, {
+    method: "get", path: "/dashboard/class/report.pdf", tag: TAGS.guru,
+    summary:
+      "Unduh PDF laporan semua murid (1 halaman per anak): penguasaan per level (Vokal, Konsonan, Suku Kata, " +
+      "Kata 2 Suku Kata), perkembangan bicara per hari, streak, catatan AI. `studentId` = hanya satu anak. " +
+      "Login: header `Authorization: Bearer <token guru>`, atau `key` dari /dashboard/class/report-link.",
+    query: reportQuery.extend({ key: z.string().optional() }),
+    handler: async ({ req, query }) => {
+      let teacherId: string;
+      if (query.key) {
+        try {
+          teacherId = verifyDownloadKey(query.key);
+        } catch {
+          throw new AppError(401, "Link unduhan sudah kedaluwarsa, minta link baru");
+        }
+      } else teacherId = authenticate(req, "teacher").id;
+      const { pdf, name } = await classReportPdf(teacherId, query.classroomId, query.days, query.studentId);
+      return new FileResult(pdf, "application/pdf", name);
+    },
+  });
+  route(r, {
     method: "get", path: "/ai/class/insight", tag: TAGS.guru, auth: "teacher", summary: "Ringkasan AI untuk sekelas",
     query: s.classroomQuery,
     handler: ({ user, query }) => ai.classInsight(user.id, query.classroomId),
@@ -193,8 +232,11 @@ export function apiRouter(): Router {
     method: "post", path: "/ai/students/:id/ask", tag: TAGS.guru, auth: "teacher",
     summary: "Tanya AI tentang progres satu anak (jawaban dari data latihan)",
     body: s.askBody,
-    handler: async ({ user, params, body }) =>
-      ai.askAboutChild(await accounts.ownedStudent(user.id, params.id), body.question, "guru"),
+    handler: async ({ user, params, body }) => {
+      const child = await accounts.ownedStudent(user.id, params.id);
+      assertAskQuota(user.id);
+      return ai.askAboutChild(child, body.question, "guru");
+    },
   });
   route(r, {
     method: "post", path: "/homework", tag: TAGS.guru, auth: "teacher", status: 201,
@@ -298,8 +340,11 @@ export function apiRouter(): Router {
     method: "post", path: "/parent/children/:id/ask", tag: TAGS.ortu, auth: "parent",
     summary: "Tanya AI tentang progres anak (jawaban dari data latihan)",
     body: s.askBody,
-    handler: async ({ user, params, body }) =>
-      ai.askAboutChild(await parents.linkedChild(user.id, params.id), body.question, "orang_tua"),
+    handler: async ({ user, params, body }) => {
+      const child = await parents.linkedChild(user.id, params.id);
+      assertAskQuota(user.id);
+      return ai.askAboutChild(child, body.question, "orang_tua");
+    },
   });
 
   return r;

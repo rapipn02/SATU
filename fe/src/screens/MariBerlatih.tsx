@@ -35,10 +35,10 @@ const KESALAHAN: Record<Petunjuk, string> = {
   gigi_rapat: 'gigimu belum rapat',
 }
 
-type Hitung = { jeda: number; bentuk: number; suara: number }
+export type Hitung = { jeda: number; bentuk: number; suara: number }
 
 /** Pesan saat akurasi di bawah 50%: apa kesalahannya dan cara memperbaikinya (tanpa pop up bintang). */
-function ceritaGagal(akurasi: number, hitung: Hitung, petunjuk: Record<string, number>, bunyi: Bunyi | null): string {
+export function ceritaGagal(akurasi: number, hitung: Hitung, petunjuk: Record<string, number>, bunyi: Bunyi | null): string {
   const awal = `✗ Akurasimu ${akurasi}%, belum mencapai 50%, jadi belum dapat bintang. `
   const [dominan] = (Object.entries(hitung) as [keyof Hitung, number][]).sort((a, b) => b[1] - a[1])[0]
   if (dominan === 'jeda' && hitung.jeda > 0) {
@@ -56,8 +56,8 @@ function ceritaGagal(akurasi: number, hitung: Hitung, petunjuk: Record<string, n
 }
 
 // SEMENTARA (ruangan hackathon bising): syarat suara dimatikan, hanya bentuk bibir yang dinilai.
-// Memakai opsi `tanpaSuara` bawaan Mata; ubah ke false untuk menyalakan penilaian suara lagi.
-const TANPA_SUARA = true
+// Memakai opsi `tanpaSuara` bawaan Mata; false = mikrofon ikut menilai suara/napas (web siswa).
+export const TANPA_SUARA = false
 
 // Buka dengan ?debug di URL untuk melihat angka bibir mentah dari kamera (selisih dari wajah netral).
 const DEBUG = typeof location !== "undefined" && location.search.includes("debug")

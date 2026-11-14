@@ -6,8 +6,16 @@ import { MariBerlatih } from './screens/MariBerlatih'
 import { Peta } from './screens/Peta'
 import { PinGambar } from './screens/PinGambar'
 import { TokoHadiah } from './screens/TokoHadiah'
+import { OrtuApp } from './ortu/OrtuApp'
+
+// /ortu dan /undangan/<token> = aplikasi orang tua; alamat lain = mode kelas (web anak).
+const ORTU = /^\/(ortu|undangan)(\/|$)/.test(location.pathname)
 
 export default function App() {
+  return ORTU ? <OrtuApp /> : <AppAnak />
+}
+
+function AppAnak() {
   const [picked, setPicked] = useState<{ student: StudentCard; index: number } | null>(null)
   const [kid, setKid] = useState<StudentSession | null>(null)
   const [levels, setLevels] = useState<LevelView[]>([])

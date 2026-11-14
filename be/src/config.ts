@@ -1,4 +1,5 @@
 import "dotenv/config";
+import path from "node:path";
 import { z } from "zod";
 
 const emptyToUndefined = (value: unknown) => (value === "" ? undefined : value);
@@ -14,6 +15,8 @@ const schema = z.object({
   INVITE_URL: z.preprocess(emptyToUndefined, z.string().optional()),
   // Alamat publik backend (tanpa /api), dipakai untuk URL video tutorial. Kosong = URL relatif (/tutorial/...).
   PUBLIC_URL: z.preprocess(emptyToUndefined, z.string().optional()),
+  // Folder hasil build web (npm run build di fe). Kalau ada, backend menyajikannya di / (web anak + /ortu).
+  WEB_DIST: z.string().default(path.resolve(import.meta.dirname, "../../fe/dist")),
   // The ML teammate's service, including its prefix: http://127.0.0.1:8000/ai. Empty = rule-based fallback only.
   AI_URL: z.preprocess(emptyToUndefined, z.url().optional()),
   AI_TIMEOUT_MS: z.coerce.number().int().min(100).default(5000),

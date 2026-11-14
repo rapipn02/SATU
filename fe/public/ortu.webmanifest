@@ -1,0 +1,17 @@
+{
+  "name": "SATU untuk Orang Tua",
+  "short_name": "SATU",
+  "description": "Pantau dan dampingi latihan bicara anak di rumah.",
+  "id": "/ortu",
+  "start_url": "/ortu",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF6DD",
+  "theme_color": "#F7CB50",
+  "lang": "id",
+  "icons": [
+    { "src": "/ortu-ikon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/ortu-ikon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

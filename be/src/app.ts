@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import cors from "cors";
 import express from "express";
 import swaggerUi from "swagger-ui-express";
@@ -39,6 +41,14 @@ export function createApp() {
       },
     }),
   );
+
+  // Web (anak + orang tua) dari hasil build fe, satu alamat HTTPS dengan API: kamera boleh jalan, tanpa CORS.
+  // Alamat halaman (/ortu, /undangan/<token>, ...) dijawab index.html; React yang memilih layarnya.
+  const index = path.join(config.WEB_DIST, "index.html");
+  if (existsSync(index)) {
+    app.use(express.static(config.WEB_DIST, { index: false, maxAge: "1h" }));
+    app.get(/^\/(?!api\/|api$|docs|tutorial\/|openapi\.json|health).*/, (_req, res) => res.sendFile(index));
+  }
 
   app.use((_req, res) => {
     res.status(404).json({ detail: "Endpoint tidak ditemukan" });

@@ -60,7 +60,12 @@ export function authenticate(req: Request, roles: Role | Role[]): Principal {
   return principal;
 }
 
-/** Registers one endpoint: auth by role, zod-validated body/query, JSON response. */
+/** Return this from a handler to send a download (e.g. a PDF) instead of JSON. */
+export class FileResult {
+  constructor(readonly data: Buffer, readonly type: string, readonly name: string) {}
+}
+
+/** Registers one endpoint: auth by role, zod-validated body/query, JSON response (or a FileResult download). */
 export function route<B extends ZodType = ZodType<undefined>, Q extends ZodType = ZodType<undefined>>(
   router: Router,
   def: RouteDef<B, Q>,
@@ -79,6 +84,10 @@ export function route<B extends ZodType = ZodType<undefined>, Q extends ZodType 
       query: query as z.infer<Q>,
       params: req.params as Record<string, string>,
     });
+    if (result instanceof FileResult) {
+      res.status(200).type(result.type).attachment(result.name).send(result.data);
+      return;
+    }
     res.status(def.status ?? 200).json(result ?? null);
   });
 }
