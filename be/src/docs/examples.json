@@ -1,0 +1,6341 @@
+{
+  "post /auth/teacher/login": {
+    "request": {
+      "email": "guru@satu.id",
+      "password": "gurusatu!"
+    },
+    "status": 200,
+    "response": {
+      "token": "eyJhbGciOiJIUzI1NiIs...",
+      "role": "teacher",
+      "teacher": {
+        "id": "11c50368-e20c-4b5d-a9d3-ce972667a4b6",
+        "name": "Bu Rina",
+        "email": "guru@satu.id"
+      },
+      "classroom": {
+        "id": "a21e5dc3-515b-4f56-9750-d379c00064e8",
+        "name": "Kelas 1"
+      },
+      "classrooms": [
+        {
+          "id": "a21e5dc3-515b-4f56-9750-d379c00064e8",
+          "name": "Kelas 1",
+          "createdAt": "2026-11-14T14:31:10.910Z",
+          "studentCount": 0
+        }
+      ]
+    }
+  },
+  "post /students": {
+    "request": {
+      "nickname": "Raka",
+      "parentWhatsapp": "081234567890",
+      "photoUrl": "https://contoh.id/foto/raka.jpg",
+      "picturePassword": [
+        2,
+        5,
+        8
+      ]
+    },
+    "status": 201,
+    "response": {
+      "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+      "nickname": "Raka",
+      "photoUrl": "https://contoh.id/foto/raka.jpg",
+      "isLocked": false,
+      "parentWhatsapp": "6281234567890",
+      "parentId": "c85fab10-c724-46e7-b2bb-2bc97a7c317b",
+      "invite": {
+        "inviteToken": "OfasjShysVAaSfoDwL8yNAqgPhFtE7qp",
+        "inviteUrl": "satu://undangan/OfasjShysVAaSfoDwL8yNAqgPhFtE7qp",
+        "expiresAt": "2026-11-21T14:31:11.065Z"
+      }
+    }
+  },
+  "get /classrooms": {
+    "status": 200,
+    "response": [
+      {
+        "id": "a21e5dc3-515b-4f56-9750-d379c00064e8",
+        "name": "Kelas 1",
+        "createdAt": "2026-11-14T14:31:10.910Z",
+        "studentCount": 2
+      }
+    ]
+  },
+  "post /classrooms": {
+    "request": {
+      "name": "Kelas B"
+    },
+    "status": 201,
+    "response": {
+      "id": "0e4859fe-b408-40c1-baaa-944e2d0655f7",
+      "name": "Kelas B",
+      "createdAt": "2026-11-14T14:31:11.134Z",
+      "studentCount": 0
+    }
+  },
+  "patch /students/:id": {
+    "request": {
+      "photoUrl": "https://contoh.id/foto/raka-baru.jpg"
+    },
+    "status": 200,
+    "response": {
+      "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+      "nickname": "Raka",
+      "photoUrl": "https://contoh.id/foto/raka-baru.jpg",
+      "isLocked": false
+    }
+  },
+  "put /students/:id/picture-password": {
+    "request": {
+      "picturePassword": [
+        2,
+        5,
+        8
+      ]
+    },
+    "status": 200,
+    "response": {
+      "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+      "nickname": "Raka",
+      "photoUrl": "https://contoh.id/foto/raka-baru.jpg",
+      "isLocked": false
+    }
+  },
+  "put /students/:id/level": {
+    "request": {
+      "maxLevel": 3
+    },
+    "status": 200,
+    "response": {
+      "studentId": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+      "maxLevel": 3
+    }
+  },
+  "post /students/:id/unlock": {
+    "status": 200,
+    "response": {
+      "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+      "nickname": "Raka",
+      "photoUrl": "https://contoh.id/foto/raka-baru.jpg",
+      "isLocked": false
+    }
+  },
+  "get /classroom/students": {
+    "status": 200,
+    "response": [
+      {
+        "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+        "nickname": "Raka",
+        "photoUrl": "https://contoh.id/foto/raka-baru.jpg",
+        "isLocked": false
+      },
+      {
+        "id": "cb14a94b-ccb0-413b-8687-3777ec902ce8",
+        "nickname": "Sinta",
+        "photoUrl": null,
+        "isLocked": false
+      }
+    ]
+  },
+  "post /auth/student/login": {
+    "request": {
+      "studentId": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+      "picturePassword": [
+        2,
+        5,
+        8
+      ]
+    },
+    "status": 200,
+    "response": {
+      "token": "eyJhbGciOiJIUzI1NiIs...",
+      "role": "student",
+      "student": {
+        "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+        "nickname": "Raka",
+        "photoUrl": "https://contoh.id/foto/raka-baru.jpg",
+        "isLocked": false
+      }
+    }
+  },
+  "put /me/calibration": {
+    "request": {
+      "versi": 1,
+      "kelas": [
+        "a",
+        "i",
+        "u"
+      ],
+      "pusat": [
+        [
+          0.41,
+          0.05,
+          0.02,
+          0,
+          0.3
+        ],
+        [
+          0.12,
+          0.02,
+          0.18,
+          0,
+          0.1
+        ],
+        [
+          0.1,
+          0.52,
+          0,
+          0,
+          0.1
+        ]
+      ],
+      "skala": [
+        0.08,
+        0.08,
+        0.08,
+        0.05,
+        0.08
+      ],
+      "jumlah": [
+        6,
+        6,
+        6
+      ],
+      "akurasi": 0.91
+    },
+    "status": 200,
+    "response": {
+      "saved": true
+    }
+  },
+  "get /me/calibration": {
+    "status": 200,
+    "response": {
+      "model": {
+        "kelas": [
+          "a",
+          "i",
+          "u"
+        ],
+        "pusat": [
+          [
+            0.41,
+            0.05,
+            0.02,
+            0,
+            0.3
+          ],
+          [
+            0.12,
+            0.02,
+            0.18,
+            0,
+            0.1
+          ],
+          [
+            0.1,
+            0.52,
+            0,
+            0,
+            0.1
+          ]
+        ],
+        "skala": [
+          0.08,
+          0.08,
+          0.08,
+          0.05,
+          0.08
+        ],
+        "versi": 1,
+        "jumlah": [
+          6,
+          6,
+          6
+        ],
+        "akurasi": 0.91
+      }
+    }
+  },
+  "get /levels": {
+    "status": 200,
+    "response": [
+      {
+        "id": "level-1",
+        "category": "vokal",
+        "orderNo": 1,
+        "title": "Vokal a, i, u",
+        "items": [
+          {
+            "id": "t1-a",
+            "text": "a",
+            "urutan": [
+              "a"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-a.mp4"
+          },
+          {
+            "id": "t1-i",
+            "text": "i",
+            "urutan": [
+              "i"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-i.mp4"
+          },
+          {
+            "id": "t1-u",
+            "text": "u",
+            "urutan": [
+              "u"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-u.mp4"
+          },
+          {
+            "id": "t2-a",
+            "text": "a",
+            "urutan": [
+              "a"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-i",
+            "text": "i",
+            "urutan": [
+              "i"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-u",
+            "text": "u",
+            "urutan": [
+              "u"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": null,
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terbuka",
+        "lockedByTeacher": false,
+        "unlocked": true,
+        "source": "stars"
+      },
+      {
+        "id": "level-2",
+        "category": "vokal",
+        "orderNo": 2,
+        "title": "Vokal e, o",
+        "items": [
+          {
+            "id": "t1-o",
+            "text": "o",
+            "urutan": [
+              "o"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-o.mp4"
+          },
+          {
+            "id": "t1-e",
+            "text": "e",
+            "urutan": [
+              "e"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-e.mp4"
+          },
+          {
+            "id": "t2-o",
+            "text": "o",
+            "urutan": [
+              "o"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-e",
+            "text": "e",
+            "urutan": [
+              "e"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": "level-1",
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terbuka",
+        "lockedByTeacher": false,
+        "unlocked": true,
+        "source": "stars"
+      },
+      {
+        "id": "level-3",
+        "category": "konsonan",
+        "orderNo": 3,
+        "title": "Konsonan bibir: m/b/p dan f/v",
+        "items": [
+          {
+            "id": "t1-M",
+            "text": "m",
+            "urutan": [
+              "M"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-M.mp4"
+          },
+          {
+            "id": "t1-F",
+            "text": "f",
+            "urutan": [
+              "F"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-F.mp4"
+          },
+          {
+            "id": "t2-M",
+            "text": "m",
+            "urutan": [
+              "M"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-F",
+            "text": "f",
+            "urutan": [
+              "F"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": "level-2",
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terbuka",
+        "lockedByTeacher": false,
+        "unlocked": true,
+        "source": "stars"
+      },
+      {
+        "id": "level-4",
+        "category": "konsonan",
+        "orderNo": 4,
+        "title": "Hembusan h, desis, dan huruf lidah",
+        "items": [
+          {
+            "id": "t1-H",
+            "text": "h",
+            "urutan": [
+              "H"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-H.mp4"
+          },
+          {
+            "id": "t1-S",
+            "text": "s",
+            "urutan": [
+              "S"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t1-T",
+            "text": "t",
+            "urutan": [
+              "T"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-H",
+            "text": "h",
+            "urutan": [
+              "H"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-S",
+            "text": "s",
+            "urutan": [
+              "S"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-T",
+            "text": "t",
+            "urutan": [
+              "T"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": "level-3",
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terkunci",
+        "lockedByTeacher": true,
+        "unlocked": false,
+        "source": "stars"
+      },
+      {
+        "id": "level-5",
+        "category": "suku_kata",
+        "orderNo": 5,
+        "title": "Suku kata",
+        "items": [
+          {
+            "id": "t3-ma",
+            "text": "ma",
+            "urutan": [
+              "M",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t3-ma.mp4"
+          },
+          {
+            "id": "t3-mi",
+            "text": "mi",
+            "urutan": [
+              "M",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-mu",
+            "text": "mu",
+            "urutan": [
+              "M",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-mo",
+            "text": "mo",
+            "urutan": [
+              "M",
+              "o"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ba",
+            "text": "ba",
+            "urutan": [
+              "M",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-bi",
+            "text": "bi",
+            "urutan": [
+              "M",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-bu",
+            "text": "bu",
+            "urutan": [
+              "M",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-bo",
+            "text": "bo",
+            "urutan": [
+              "M",
+              "o"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-pa",
+            "text": "pa",
+            "urutan": [
+              "M",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-pi",
+            "text": "pi",
+            "urutan": [
+              "M",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-pu",
+            "text": "pu",
+            "urutan": [
+              "M",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-po",
+            "text": "po",
+            "urutan": [
+              "M",
+              "o"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-me",
+            "text": "me",
+            "urutan": [
+              "M",
+              "e"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-be",
+            "text": "be",
+            "urutan": [
+              "M",
+              "e"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-pe",
+            "text": "pe",
+            "urutan": [
+              "M",
+              "e"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-fa",
+            "text": "fa",
+            "urutan": [
+              "F",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t3-fa.mp4"
+          },
+          {
+            "id": "t3-fi",
+            "text": "fi",
+            "urutan": [
+              "F",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-fu",
+            "text": "fu",
+            "urutan": [
+              "F",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-va",
+            "text": "va",
+            "urutan": [
+              "F",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-wa",
+            "text": "wa",
+            "urutan": [
+              "u",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t3-wa.mp4"
+          },
+          {
+            "id": "t3-ya",
+            "text": "ya",
+            "urutan": [
+              "i",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t3-ya.mp4"
+          },
+          {
+            "id": "t3-ha",
+            "text": "ha",
+            "urutan": [
+              "H",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t3-ha.mp4"
+          },
+          {
+            "id": "t3-hi",
+            "text": "hi",
+            "urutan": [
+              "H",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-hu",
+            "text": "hu",
+            "urutan": [
+              "H",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ho",
+            "text": "ho",
+            "urutan": [
+              "H",
+              "o"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-sa",
+            "text": "sa",
+            "urutan": [
+              "S",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-si",
+            "text": "si",
+            "urutan": [
+              "S",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-su",
+            "text": "su",
+            "urutan": [
+              "S",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ca",
+            "text": "ca",
+            "urutan": [
+              "S",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ja",
+            "text": "ja",
+            "urutan": [
+              "S",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ta",
+            "text": "ta",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ti",
+            "text": "ti",
+            "urutan": [
+              "T",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-tu",
+            "text": "tu",
+            "urutan": [
+              "T",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-da",
+            "text": "da",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ka",
+            "text": "ka",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ki",
+            "text": "ki",
+            "urutan": [
+              "T",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ku",
+            "text": "ku",
+            "urutan": [
+              "T",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ga",
+            "text": "ga",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-la",
+            "text": "la",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-na",
+            "text": "na",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ra",
+            "text": "ra",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": "level-4",
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terkunci",
+        "lockedByTeacher": true,
+        "unlocked": false,
+        "source": "stars"
+      },
+      {
+        "id": "level-6",
+        "category": "kata",
+        "orderNo": 6,
+        "title": "Kata",
+        "items": [
+          {
+            "id": "t4-mama",
+            "text": "mama",
+            "urutan": [
+              "M",
+              "a",
+              "M",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t4-mama.mp4"
+          },
+          {
+            "id": "t4-mami",
+            "text": "mami",
+            "urutan": [
+              "M",
+              "a",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-oma",
+            "text": "oma",
+            "urutan": [
+              "o",
+              "M",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-ayam",
+            "text": "ayam",
+            "urutan": [
+              "a",
+              "i",
+              "a",
+              "M"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-imam",
+            "text": "imam",
+            "urutan": [
+              "i",
+              "M",
+              "a",
+              "M"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-umum",
+            "text": "umum",
+            "urutan": [
+              "u",
+              "M",
+              "u",
+              "M"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-maaf",
+            "text": "maaf",
+            "urutan": [
+              "M",
+              "a",
+              "F"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-mau",
+            "text": "mau",
+            "urutan": [
+              "M",
+              "a",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-ayo",
+            "text": "ayo",
+            "urutan": [
+              "a",
+              "i",
+              "o"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-hiu",
+            "text": "hiu",
+            "urutan": [
+              "H",
+              "i",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-hama",
+            "text": "hama",
+            "urutan": [
+              "H",
+              "a",
+              "M",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-hawa",
+            "text": "hawa",
+            "urutan": [
+              "H",
+              "a",
+              "u",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-ayah",
+            "text": "ayah",
+            "urutan": [
+              "a",
+              "i",
+              "a",
+              "H"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-wahyu",
+            "text": "wahyu",
+            "urutan": [
+              "u",
+              "a",
+              "H",
+              "i",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-papa",
+            "text": "papa",
+            "urutan": [
+              "M",
+              "a",
+              "M",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-bola",
+            "text": "bola",
+            "urutan": [
+              "M",
+              "o",
+              "T",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-buku",
+            "text": "buku",
+            "urutan": [
+              "M",
+              "u",
+              "T",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-baju",
+            "text": "baju",
+            "urutan": [
+              "M",
+              "a",
+              "S",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-mata",
+            "text": "mata",
+            "urutan": [
+              "M",
+              "a",
+              "T",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-pipi",
+            "text": "pipi",
+            "urutan": [
+              "M",
+              "i",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-bibi",
+            "text": "bibi",
+            "urutan": [
+              "M",
+              "i",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-bumi",
+            "text": "bumi",
+            "urutan": [
+              "M",
+              "u",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-pita",
+            "text": "pita",
+            "urutan": [
+              "M",
+              "i",
+              "T",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-palu",
+            "text": "palu",
+            "urutan": [
+              "M",
+              "a",
+              "T",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-mobil",
+            "text": "mobil",
+            "urutan": [
+              "M",
+              "o",
+              "M",
+              "i",
+              "T"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-ibu",
+            "text": "ibu",
+            "urutan": [
+              "i",
+              "M",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-api",
+            "text": "api",
+            "urutan": [
+              "a",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-ubi",
+            "text": "ubi",
+            "urutan": [
+              "u",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-topi",
+            "text": "topi",
+            "urutan": [
+              "T",
+              "o",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-sapu",
+            "text": "sapu",
+            "urutan": [
+              "S",
+              "a",
+              "M",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-kaki",
+            "text": "kaki",
+            "urutan": [
+              "T",
+              "a",
+              "T",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-kuda",
+            "text": "kuda",
+            "urutan": [
+              "T",
+              "u",
+              "T",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-roti",
+            "text": "roti",
+            "urutan": [
+              "T",
+              "o",
+              "T",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-dadu",
+            "text": "dadu",
+            "urutan": [
+              "T",
+              "a",
+              "T",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-susu",
+            "text": "susu",
+            "urutan": [
+              "S",
+              "u",
+              "S",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-gigi",
+            "text": "gigi",
+            "urutan": [
+              "T",
+              "i",
+              "T",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-meja",
+            "text": "meja",
+            "urutan": [
+              "M",
+              "e",
+              "S",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": "level-5",
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terkunci",
+        "lockedByTeacher": true,
+        "unlocked": false,
+        "source": "stars"
+      }
+    ]
+  },
+  "post /attempts": {
+    "request": {
+      "itemId": "t1-a",
+      "berhasil": true,
+      "langkah_tercapai": 1,
+      "durasi_ms": 1800,
+      "kemiripan": 0.92
+    },
+    "status": 201,
+    "response": {
+      "itemId": "t1-a",
+      "levelId": "level-1",
+      "stars": 3,
+      "correct": true,
+      "accuracy": 92,
+      "bestStars": 3,
+      "pointsEarned": 30,
+      "totalPoints": 40,
+      "dailyCount": 2,
+      "dailyTarget": 3,
+      "streak": {
+        "current": 0,
+        "longest": 0
+      },
+      "homeworkDone": false,
+      "mastery": [
+        {
+          "bunyi": "a",
+          "tingkat": 1,
+          "berhasil": true,
+          "sebelum": 0.7693,
+          "sesudah": 0.9008,
+          "label": "sudah_bisa"
+        }
+      ],
+      "rest": {
+        "suggested": false,
+        "reasons": []
+      },
+      "next": {
+        "item": {
+          "id": "t1-i",
+          "text": "i",
+          "tingkat": 1,
+          "urutan": [
+            "i"
+          ],
+          "bantuanVisual": true,
+          "dinilaiSebagian": false
+        },
+        "levelId": "level-1",
+        "reason": "zona",
+        "expectedSuccess": 0.515,
+        "rest": false
+      },
+      "source": "ai"
+    }
+  },
+  "get /me/student": {
+    "status": 200,
+    "response": {
+      "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+      "nickname": "Raka",
+      "photoUrl": "https://contoh.id/foto/raka-baru.jpg",
+      "totalPoints": 40,
+      "calibration": {
+        "kelas": [
+          "a",
+          "i",
+          "u"
+        ],
+        "pusat": [
+          [
+            0.41,
+            0.05,
+            0.02,
+            0,
+            0.3
+          ],
+          [
+            0.12,
+            0.02,
+            0.18,
+            0,
+            0.1
+          ],
+          [
+            0.1,
+            0.52,
+            0,
+            0,
+            0.1
+          ]
+        ],
+        "skala": [
+          0.08,
+          0.08,
+          0.08,
+          0.05,
+          0.08
+        ],
+        "versi": 1,
+        "jumlah": [
+          6,
+          6,
+          6
+        ],
+        "akurasi": 0.91
+      },
+      "classroomName": "Kelas 1",
+      "streak": {
+        "current": 0,
+        "longest": 0,
+        "lastActiveDay": null,
+        "dailyTarget": 3,
+        "todayCount": 2,
+        "last7Days": [
+          {
+            "day": "2026-11-08",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-09",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-10",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-11",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-12",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-13",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-14",
+            "count": 2,
+            "active": false
+          }
+        ]
+      }
+    }
+  },
+  "get /rewards": {
+    "status": 200,
+    "response": {
+      "totalPoints": 40,
+      "rewards": [
+        {
+          "id": "4fc4471d-7cf6-493b-895c-c4529945e06a",
+          "name": "Stiker bintang",
+          "imageUrl": null,
+          "costPoints": 30,
+          "stock": null,
+          "active": true
+        },
+        {
+          "id": "3c93d13c-1daf-405a-b642-9974eb0d55bf",
+          "name": "Pensil warna",
+          "imageUrl": null,
+          "costPoints": 100,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "3d479ae4-9058-49fc-b690-cb94ef95dd48",
+          "name": "Buku gambar",
+          "imageUrl": null,
+          "costPoints": 200,
+          "stock": 5,
+          "active": true
+        }
+      ],
+      "redemptions": []
+    }
+  },
+  "post /rewards/:id/redeem": {
+    "status": 201,
+    "response": {
+      "redemption": {
+        "id": "1b4b102e-1983-44aa-861d-52b6b465850d",
+        "rewardId": "4fc4471d-7cf6-493b-895c-c4529945e06a",
+        "pointsSpent": 30,
+        "status": "requested",
+        "createdAt": "2026-11-14T14:31:11.547Z"
+      },
+      "totalPoints": 10
+    }
+  },
+  "post /parents/invites": {
+    "request": {
+      "parentName": "Ibu Sari",
+      "studentIds": [
+        "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a"
+      ]
+    },
+    "status": 201,
+    "response": {
+      "parent": {
+        "id": "fb457e30-a7c2-47f0-916d-7e737132b3a3",
+        "name": "Ibu Sari",
+        "status": "menunggu",
+        "children": [
+          {
+            "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+            "nickname": "Raka"
+          }
+        ]
+      },
+      "expiresAt": "2026-11-21T14:31:11.566Z",
+      "inviteToken": "KDyDXkCuh4wlI9W7HuE9S-zmP_N6MOEv",
+      "inviteUrl": "satu://undangan/KDyDXkCuh4wlI9W7HuE9S-zmP_N6MOEv",
+      "whatsappText": "Halo Ibu Sari, silakan aktifkan akun SATU untuk mendampingi Raka berlatih bicara di rumah: satu://undangan/KDyDXkCuh4wlI9W7HuE9S-zmP_N6MOEv",
+      "whatsappUrl": "https://wa.me/6281234567890?text=Halo%20Ibu%20Sari%2C%20silakan%20aktifkan%20akun%20SATU%20untuk%20mendampingi%20Raka%20berlatih%20bicara%20di%20rumah%3A%20satu%3A%2F%2Fundangan%2FKDyDXkCuh4wlI9W7HuE9S-zmP_N6MOEv"
+    }
+  },
+  "post /parents/:id/invites": {
+    "status": 201,
+    "response": {
+      "expiresAt": "2026-11-21T14:31:11.605Z",
+      "inviteToken": "d_nMRTfrzD-ho-uveH5lcf9jK3I4ZRKZ",
+      "inviteUrl": "satu://undangan/d_nMRTfrzD-ho-uveH5lcf9jK3I4ZRKZ",
+      "whatsappText": "Halo Ayah Sinta, silakan aktifkan akun SATU untuk mendampingi Sinta berlatih bicara di rumah: satu://undangan/d_nMRTfrzD-ho-uveH5lcf9jK3I4ZRKZ",
+      "whatsappUrl": "https://wa.me/?text=Halo%20Ayah%20Sinta%2C%20silakan%20aktifkan%20akun%20SATU%20untuk%20mendampingi%20Sinta%20berlatih%20bicara%20di%20rumah%3A%20satu%3A%2F%2Fundangan%2Fd_nMRTfrzD-ho-uveH5lcf9jK3I4ZRKZ"
+    }
+  },
+  "get /invites/:token": {
+    "status": 200,
+    "response": {
+      "parentName": "Ibu Sari",
+      "children": [
+        "Raka"
+      ]
+    }
+  },
+  "post /invites/:token/accept": {
+    "request": {
+      "email": "ibu.sari@gmail.com",
+      "password": "rahasiaSari1"
+    },
+    "status": 200,
+    "response": {
+      "token": "eyJhbGciOiJIUzI1NiIs...",
+      "role": "parent",
+      "parent": {
+        "id": "fb457e30-a7c2-47f0-916d-7e737132b3a3",
+        "name": "Ibu Sari",
+        "email": "ibu.sari@gmail.com"
+      }
+    }
+  },
+  "post /auth/parent/login": {
+    "request": {
+      "email": "ibu.sari@gmail.com",
+      "password": "rahasiaSari1"
+    },
+    "status": 200,
+    "response": {
+      "token": "eyJhbGciOiJIUzI1NiIs...",
+      "role": "parent",
+      "parent": {
+        "id": "fb457e30-a7c2-47f0-916d-7e737132b3a3",
+        "name": "Ibu Sari",
+        "email": "ibu.sari@gmail.com"
+      }
+    }
+  },
+  "get /parents": {
+    "status": 200,
+    "response": [
+      {
+        "id": "be6e4d95-215e-4731-9c70-2ba06b409b04",
+        "name": "Ayah Sinta",
+        "email": null,
+        "status": "menunggu",
+        "activatedAt": null,
+        "children": [
+          {
+            "id": "cb14a94b-ccb0-413b-8687-3777ec902ce8",
+            "nickname": "Sinta"
+          }
+        ]
+      },
+      {
+        "id": "fb457e30-a7c2-47f0-916d-7e737132b3a3",
+        "name": "Ibu Sari",
+        "email": "ibu.sari@gmail.com",
+        "status": "aktif",
+        "activatedAt": "2026-11-14T14:31:11.633Z",
+        "children": [
+          {
+            "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+            "nickname": "Raka"
+          }
+        ]
+      },
+      {
+        "id": "c85fab10-c724-46e7-b2bb-2bc97a7c317b",
+        "name": "Orang tua Raka",
+        "email": null,
+        "status": "menunggu",
+        "activatedAt": null,
+        "children": [
+          {
+            "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+            "nickname": "Raka"
+          }
+        ]
+      },
+      {
+        "id": "17451629-61ef-4f3e-a90d-c31bbec8b197",
+        "name": "Orang tua Sinta",
+        "email": null,
+        "status": "menunggu",
+        "activatedAt": null,
+        "children": [
+          {
+            "id": "cb14a94b-ccb0-413b-8687-3777ec902ce8",
+            "nickname": "Sinta"
+          }
+        ]
+      }
+    ]
+  },
+  "get /dashboard/class": {
+    "status": 200,
+    "response": {
+      "classroom": {
+        "id": "a21e5dc3-515b-4f56-9750-d379c00064e8",
+        "name": "Kelas 1"
+      },
+      "totals": {
+        "students": 2,
+        "practisedToday": 1,
+        "practicesToday": 2,
+        "averageStars": 3,
+        "brokenStreaks": 2
+      },
+      "students": [
+        {
+          "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+          "nickname": "Raka",
+          "photoUrl": "https://contoh.id/foto/raka-baru.jpg",
+          "isLocked": false,
+          "totalPoints": 10,
+          "todayCount": 2,
+          "streak": 0,
+          "levelsDone": 1,
+          "avgStars": 3,
+          "lastPracticeAt": "2026-11-14T14:31:11.493Z",
+          "openHomework": 0
+        },
+        {
+          "id": "cb14a94b-ccb0-413b-8687-3777ec902ce8",
+          "nickname": "Sinta",
+          "photoUrl": null,
+          "isLocked": false,
+          "totalPoints": 0,
+          "todayCount": 0,
+          "streak": 0,
+          "levelsDone": 0,
+          "avgStars": 0,
+          "lastPracticeAt": null,
+          "openHomework": 0
+        }
+      ]
+    }
+  },
+  "get /dashboard/students/:id": {
+    "status": 200,
+    "response": {
+      "student": {
+        "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+        "nickname": "Raka",
+        "photoUrl": "https://contoh.id/foto/raka-baru.jpg",
+        "isLocked": false,
+        "maxLevel": 3
+      },
+      "totalPoints": 10,
+      "status": {
+        "a": "sudah_bisa",
+        "i": "sedang_dilatih",
+        "u": "belum_dilatih",
+        "e": "belum_dilatih",
+        "o": "belum_dilatih",
+        "M": "belum_dilatih",
+        "F": "belum_dilatih",
+        "H": "belum_dilatih",
+        "S": "belum_dilatih",
+        "T": "belum_dilatih"
+      },
+      "cleared": {
+        "a": true,
+        "i": false,
+        "u": false,
+        "e": false,
+        "o": false,
+        "M": false,
+        "F": false,
+        "H": false,
+        "S": false,
+        "T": false
+      },
+      "canDo": [
+        "Bunyi a"
+      ],
+      "source": "ai",
+      "practiceDays7": 1,
+      "streak": {
+        "current": 0,
+        "longest": 0,
+        "lastActiveDay": null,
+        "dailyTarget": 3,
+        "todayCount": 2,
+        "last7Days": [
+          {
+            "day": "2026-11-08",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-09",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-10",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-11",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-12",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-13",
+            "count": 0,
+            "active": false
+          },
+          {
+            "day": "2026-11-14",
+            "count": 2,
+            "active": false
+          }
+        ]
+      },
+      "levels": [
+        {
+          "id": "level-1",
+          "category": "vokal",
+          "orderNo": 1,
+          "title": "Vokal a, i, u",
+          "items": [
+            {
+              "id": "t1-a",
+              "text": "a",
+              "urutan": [
+                "a"
+              ],
+              "tingkat": 1,
+              "bantuanVisual": true,
+              "dinilaiSebagian": false,
+              "bestStars": 3,
+              "tutorialUrl": "/tutorial/t1-a.mp4"
+            },
+            {
+              "id": "t1-i",
+              "text": "i",
+              "urutan": [
+                "i"
+              ],
+              "tingkat": 1,
+              "bantuanVisual": true,
+              "dinilaiSebagian": false,
+              "bestStars": 1,
+              "tutorialUrl": "/tutorial/t1-i.mp4"
+            },
+            {
+              "id": "t1-u",
+              "text": "u",
+              "urutan": [
+                "u"
+              ],
+              "tingkat": 1,
+              "bantuanVisual": true,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t1-u.mp4"
+            },
+            {
+              "id": "t2-a",
+              "text": "a",
+              "urutan": [
+                "a"
+              ],
+              "tingkat": 2,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t2-i",
+              "text": "i",
+              "urutan": [
+                "i"
+              ],
+              "tingkat": 2,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t2-u",
+              "text": "u",
+              "urutan": [
+                "u"
+              ],
+              "tingkat": 2,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            }
+          ],
+          "unlockAfterLevelId": null,
+          "bestStars": 3,
+          "progress": 1,
+          "attempts": 3,
+          "status": "tuntas",
+          "lockedByTeacher": false,
+          "unlocked": true,
+          "source": "stars"
+        },
+        {
+          "id": "level-2",
+          "category": "vokal",
+          "orderNo": 2,
+          "title": "Vokal e, o",
+          "items": [
+            {
+              "id": "t1-o",
+              "text": "o",
+              "urutan": [
+                "o"
+              ],
+              "tingkat": 1,
+              "bantuanVisual": true,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t1-o.mp4"
+            },
+            {
+              "id": "t1-e",
+              "text": "e",
+              "urutan": [
+                "e"
+              ],
+              "tingkat": 1,
+              "bantuanVisual": true,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t1-e.mp4"
+            },
+            {
+              "id": "t2-o",
+              "text": "o",
+              "urutan": [
+                "o"
+              ],
+              "tingkat": 2,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t2-e",
+              "text": "e",
+              "urutan": [
+                "e"
+              ],
+              "tingkat": 2,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            }
+          ],
+          "unlockAfterLevelId": "level-1",
+          "bestStars": 0,
+          "progress": 0,
+          "attempts": 0,
+          "status": "terbuka",
+          "lockedByTeacher": false,
+          "unlocked": true,
+          "source": "stars"
+        },
+        {
+          "id": "level-3",
+          "category": "konsonan",
+          "orderNo": 3,
+          "title": "Konsonan bibir: m/b/p dan f/v",
+          "items": [
+            {
+              "id": "t1-M",
+              "text": "m",
+              "urutan": [
+                "M"
+              ],
+              "tingkat": 1,
+              "bantuanVisual": true,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t1-M.mp4"
+            },
+            {
+              "id": "t1-F",
+              "text": "f",
+              "urutan": [
+                "F"
+              ],
+              "tingkat": 1,
+              "bantuanVisual": true,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t1-F.mp4"
+            },
+            {
+              "id": "t2-M",
+              "text": "m",
+              "urutan": [
+                "M"
+              ],
+              "tingkat": 2,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t2-F",
+              "text": "f",
+              "urutan": [
+                "F"
+              ],
+              "tingkat": 2,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            }
+          ],
+          "unlockAfterLevelId": "level-2",
+          "bestStars": 0,
+          "progress": 0,
+          "attempts": 0,
+          "status": "terbuka",
+          "lockedByTeacher": false,
+          "unlocked": true,
+          "source": "stars"
+        },
+        {
+          "id": "level-4",
+          "category": "konsonan",
+          "orderNo": 4,
+          "title": "Hembusan h, desis, dan huruf lidah",
+          "items": [
+            {
+              "id": "t1-H",
+              "text": "h",
+              "urutan": [
+                "H"
+              ],
+              "tingkat": 1,
+              "bantuanVisual": true,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t1-H.mp4"
+            },
+            {
+              "id": "t1-S",
+              "text": "s",
+              "urutan": [
+                "S"
+              ],
+              "tingkat": 1,
+              "bantuanVisual": true,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t1-T",
+              "text": "t",
+              "urutan": [
+                "T"
+              ],
+              "tingkat": 1,
+              "bantuanVisual": true,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t2-H",
+              "text": "h",
+              "urutan": [
+                "H"
+              ],
+              "tingkat": 2,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t2-S",
+              "text": "s",
+              "urutan": [
+                "S"
+              ],
+              "tingkat": 2,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t2-T",
+              "text": "t",
+              "urutan": [
+                "T"
+              ],
+              "tingkat": 2,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            }
+          ],
+          "unlockAfterLevelId": "level-3",
+          "bestStars": 0,
+          "progress": 0,
+          "attempts": 0,
+          "status": "terkunci",
+          "lockedByTeacher": true,
+          "unlocked": false,
+          "source": "stars"
+        },
+        {
+          "id": "level-5",
+          "category": "suku_kata",
+          "orderNo": 5,
+          "title": "Suku kata",
+          "items": [
+            {
+              "id": "t3-ma",
+              "text": "ma",
+              "urutan": [
+                "M",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t3-ma.mp4"
+            },
+            {
+              "id": "t3-mi",
+              "text": "mi",
+              "urutan": [
+                "M",
+                "i"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-mu",
+              "text": "mu",
+              "urutan": [
+                "M",
+                "u"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-mo",
+              "text": "mo",
+              "urutan": [
+                "M",
+                "o"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ba",
+              "text": "ba",
+              "urutan": [
+                "M",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-bi",
+              "text": "bi",
+              "urutan": [
+                "M",
+                "i"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-bu",
+              "text": "bu",
+              "urutan": [
+                "M",
+                "u"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-bo",
+              "text": "bo",
+              "urutan": [
+                "M",
+                "o"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-pa",
+              "text": "pa",
+              "urutan": [
+                "M",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-pi",
+              "text": "pi",
+              "urutan": [
+                "M",
+                "i"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-pu",
+              "text": "pu",
+              "urutan": [
+                "M",
+                "u"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-po",
+              "text": "po",
+              "urutan": [
+                "M",
+                "o"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-me",
+              "text": "me",
+              "urutan": [
+                "M",
+                "e"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-be",
+              "text": "be",
+              "urutan": [
+                "M",
+                "e"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-pe",
+              "text": "pe",
+              "urutan": [
+                "M",
+                "e"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-fa",
+              "text": "fa",
+              "urutan": [
+                "F",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t3-fa.mp4"
+            },
+            {
+              "id": "t3-fi",
+              "text": "fi",
+              "urutan": [
+                "F",
+                "i"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-fu",
+              "text": "fu",
+              "urutan": [
+                "F",
+                "u"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-va",
+              "text": "va",
+              "urutan": [
+                "F",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-wa",
+              "text": "wa",
+              "urutan": [
+                "u",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t3-wa.mp4"
+            },
+            {
+              "id": "t3-ya",
+              "text": "ya",
+              "urutan": [
+                "i",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t3-ya.mp4"
+            },
+            {
+              "id": "t3-ha",
+              "text": "ha",
+              "urutan": [
+                "H",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t3-ha.mp4"
+            },
+            {
+              "id": "t3-hi",
+              "text": "hi",
+              "urutan": [
+                "H",
+                "i"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-hu",
+              "text": "hu",
+              "urutan": [
+                "H",
+                "u"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ho",
+              "text": "ho",
+              "urutan": [
+                "H",
+                "o"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-sa",
+              "text": "sa",
+              "urutan": [
+                "S",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-si",
+              "text": "si",
+              "urutan": [
+                "S",
+                "i"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-su",
+              "text": "su",
+              "urutan": [
+                "S",
+                "u"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ca",
+              "text": "ca",
+              "urutan": [
+                "S",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ja",
+              "text": "ja",
+              "urutan": [
+                "S",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ta",
+              "text": "ta",
+              "urutan": [
+                "T",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ti",
+              "text": "ti",
+              "urutan": [
+                "T",
+                "i"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-tu",
+              "text": "tu",
+              "urutan": [
+                "T",
+                "u"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-da",
+              "text": "da",
+              "urutan": [
+                "T",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ka",
+              "text": "ka",
+              "urutan": [
+                "T",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ki",
+              "text": "ki",
+              "urutan": [
+                "T",
+                "i"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ku",
+              "text": "ku",
+              "urutan": [
+                "T",
+                "u"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ga",
+              "text": "ga",
+              "urutan": [
+                "T",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-la",
+              "text": "la",
+              "urutan": [
+                "T",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-na",
+              "text": "na",
+              "urutan": [
+                "T",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t3-ra",
+              "text": "ra",
+              "urutan": [
+                "T",
+                "a"
+              ],
+              "tingkat": 3,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            }
+          ],
+          "unlockAfterLevelId": "level-4",
+          "bestStars": 0,
+          "progress": 0,
+          "attempts": 0,
+          "status": "terkunci",
+          "lockedByTeacher": true,
+          "unlocked": false,
+          "source": "stars"
+        },
+        {
+          "id": "level-6",
+          "category": "kata",
+          "orderNo": 6,
+          "title": "Kata",
+          "items": [
+            {
+              "id": "t4-mama",
+              "text": "mama",
+              "urutan": [
+                "M",
+                "a",
+                "M",
+                "a"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": "/tutorial/t4-mama.mp4"
+            },
+            {
+              "id": "t4-mami",
+              "text": "mami",
+              "urutan": [
+                "M",
+                "a",
+                "M",
+                "i"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-oma",
+              "text": "oma",
+              "urutan": [
+                "o",
+                "M",
+                "a"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-ayam",
+              "text": "ayam",
+              "urutan": [
+                "a",
+                "i",
+                "a",
+                "M"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-imam",
+              "text": "imam",
+              "urutan": [
+                "i",
+                "M",
+                "a",
+                "M"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-umum",
+              "text": "umum",
+              "urutan": [
+                "u",
+                "M",
+                "u",
+                "M"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-maaf",
+              "text": "maaf",
+              "urutan": [
+                "M",
+                "a",
+                "F"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-mau",
+              "text": "mau",
+              "urutan": [
+                "M",
+                "a",
+                "u"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-ayo",
+              "text": "ayo",
+              "urutan": [
+                "a",
+                "i",
+                "o"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-hiu",
+              "text": "hiu",
+              "urutan": [
+                "H",
+                "i",
+                "u"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-hama",
+              "text": "hama",
+              "urutan": [
+                "H",
+                "a",
+                "M",
+                "a"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-hawa",
+              "text": "hawa",
+              "urutan": [
+                "H",
+                "a",
+                "u",
+                "a"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-ayah",
+              "text": "ayah",
+              "urutan": [
+                "a",
+                "i",
+                "a",
+                "H"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-wahyu",
+              "text": "wahyu",
+              "urutan": [
+                "u",
+                "a",
+                "H",
+                "i",
+                "u"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-papa",
+              "text": "papa",
+              "urutan": [
+                "M",
+                "a",
+                "M",
+                "a"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-bola",
+              "text": "bola",
+              "urutan": [
+                "M",
+                "o",
+                "T",
+                "a"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-buku",
+              "text": "buku",
+              "urutan": [
+                "M",
+                "u",
+                "T",
+                "u"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-baju",
+              "text": "baju",
+              "urutan": [
+                "M",
+                "a",
+                "S",
+                "u"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-mata",
+              "text": "mata",
+              "urutan": [
+                "M",
+                "a",
+                "T",
+                "a"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-pipi",
+              "text": "pipi",
+              "urutan": [
+                "M",
+                "i",
+                "M",
+                "i"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-bibi",
+              "text": "bibi",
+              "urutan": [
+                "M",
+                "i",
+                "M",
+                "i"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-bumi",
+              "text": "bumi",
+              "urutan": [
+                "M",
+                "u",
+                "M",
+                "i"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-pita",
+              "text": "pita",
+              "urutan": [
+                "M",
+                "i",
+                "T",
+                "a"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-palu",
+              "text": "palu",
+              "urutan": [
+                "M",
+                "a",
+                "T",
+                "u"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-mobil",
+              "text": "mobil",
+              "urutan": [
+                "M",
+                "o",
+                "M",
+                "i",
+                "T"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-ibu",
+              "text": "ibu",
+              "urutan": [
+                "i",
+                "M",
+                "u"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-api",
+              "text": "api",
+              "urutan": [
+                "a",
+                "M",
+                "i"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-ubi",
+              "text": "ubi",
+              "urutan": [
+                "u",
+                "M",
+                "i"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": false,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-topi",
+              "text": "topi",
+              "urutan": [
+                "T",
+                "o",
+                "M",
+                "i"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-sapu",
+              "text": "sapu",
+              "urutan": [
+                "S",
+                "a",
+                "M",
+                "u"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-kaki",
+              "text": "kaki",
+              "urutan": [
+                "T",
+                "a",
+                "T",
+                "i"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-kuda",
+              "text": "kuda",
+              "urutan": [
+                "T",
+                "u",
+                "T",
+                "a"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-roti",
+              "text": "roti",
+              "urutan": [
+                "T",
+                "o",
+                "T",
+                "i"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-dadu",
+              "text": "dadu",
+              "urutan": [
+                "T",
+                "a",
+                "T",
+                "u"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-susu",
+              "text": "susu",
+              "urutan": [
+                "S",
+                "u",
+                "S",
+                "u"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-gigi",
+              "text": "gigi",
+              "urutan": [
+                "T",
+                "i",
+                "T",
+                "i"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            },
+            {
+              "id": "t4-meja",
+              "text": "meja",
+              "urutan": [
+                "M",
+                "e",
+                "S",
+                "a"
+              ],
+              "tingkat": 4,
+              "bantuanVisual": false,
+              "dinilaiSebagian": true,
+              "bestStars": 0,
+              "tutorialUrl": null
+            }
+          ],
+          "unlockAfterLevelId": "level-5",
+          "bestStars": 0,
+          "progress": 0,
+          "attempts": 0,
+          "status": "terkunci",
+          "lockedByTeacher": true,
+          "unlocked": false,
+          "source": "stars"
+        }
+      ],
+      "recentAttempts": [
+        {
+          "id": "3980f97c-5a27-4df8-973e-28c5dfa30fbf",
+          "levelId": "level-1",
+          "levelTitle": "Vokal a, i, u",
+          "item": "t1-a",
+          "itemText": "a",
+          "success": true,
+          "score": 92,
+          "stars": 3,
+          "source": "school",
+          "createdAt": "2026-11-14T14:31:11.493Z"
+        },
+        {
+          "id": "29870f8a-fb1d-4501-b7dc-640e35f365b7",
+          "levelId": "level-1",
+          "levelTitle": "Vokal a, i, u",
+          "item": "t1-i",
+          "itemText": "i",
+          "success": true,
+          "score": 60,
+          "stars": 1,
+          "source": "school",
+          "createdAt": "2026-11-14T14:31:11.460Z"
+        },
+        {
+          "id": "0c057e73-9ab4-442e-a52b-ba5ff64da194",
+          "levelId": "level-1",
+          "levelTitle": "Vokal a, i, u",
+          "item": "t1-a",
+          "itemText": "a",
+          "success": false,
+          "score": 40,
+          "stars": 0,
+          "source": "school",
+          "createdAt": "2026-11-14T14:31:11.391Z"
+        }
+      ],
+      "homework": []
+    }
+  },
+  "get /dashboard/students/:id/chart": {
+    "status": 200,
+    "response": {
+      "days": 7,
+      "labels": [
+        "Min 8/11",
+        "Sen 9/11",
+        "Sel 10/11",
+        "Rab 11/11",
+        "Kam 12/11",
+        "Jum 13/11",
+        "Sab 14/11"
+      ],
+      "series": {
+        "attempts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        "correct": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "accuracy": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          64
+        ],
+        "points": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          40
+        ]
+      },
+      "daily": [
+        {
+          "date": "2026-11-08",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Min 8/11"
+        },
+        {
+          "date": "2026-11-09",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Sen 9/11"
+        },
+        {
+          "date": "2026-11-10",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Sel 10/11"
+        },
+        {
+          "date": "2026-11-11",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Rab 11/11"
+        },
+        {
+          "date": "2026-11-12",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Kam 12/11"
+        },
+        {
+          "date": "2026-11-13",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Jum 13/11"
+        },
+        {
+          "date": "2026-11-14",
+          "attempts": 3,
+          "correct": 2,
+          "stars": 4,
+          "accuracy": 64,
+          "school": 3,
+          "home": 0,
+          "points": 40,
+          "label": "Sab 14/11"
+        }
+      ],
+      "summary": {
+        "practiceDays": 1,
+        "attempts": 3,
+        "correct": 2,
+        "points": 40,
+        "accuracy": 64
+      }
+    }
+  },
+  "get /dashboard/class/sounds": {
+    "status": 200,
+    "response": {
+      "classroom": {
+        "id": "a21e5dc3-515b-4f56-9750-d379c00064e8",
+        "name": "Kelas 1"
+      },
+      "sounds": [
+        "a",
+        "i",
+        "u",
+        "e",
+        "o",
+        "M",
+        "F",
+        "H",
+        "S",
+        "T"
+      ],
+      "students": [
+        {
+          "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+          "nickname": "Raka",
+          "photoUrl": "https://contoh.id/foto/raka-baru.jpg",
+          "status": {
+            "a": "sudah_bisa",
+            "i": "sedang_dilatih",
+            "u": "belum_dilatih",
+            "e": "belum_dilatih",
+            "o": "belum_dilatih",
+            "M": "belum_dilatih",
+            "F": "belum_dilatih",
+            "H": "belum_dilatih",
+            "S": "belum_dilatih",
+            "T": "belum_dilatih"
+          },
+          "cleared": {
+            "a": true,
+            "i": false,
+            "u": false,
+            "e": false,
+            "o": false,
+            "M": false,
+            "F": false,
+            "H": false,
+            "S": false,
+            "T": false
+          },
+          "canDo": [
+            "Bunyi a"
+          ],
+          "source": "ai"
+        },
+        {
+          "id": "cb14a94b-ccb0-413b-8687-3777ec902ce8",
+          "nickname": "Sinta",
+          "photoUrl": null,
+          "status": {
+            "a": "belum_dilatih",
+            "i": "belum_dilatih",
+            "u": "belum_dilatih",
+            "e": "belum_dilatih",
+            "o": "belum_dilatih",
+            "M": "belum_dilatih",
+            "F": "belum_dilatih",
+            "H": "belum_dilatih",
+            "S": "belum_dilatih",
+            "T": "belum_dilatih"
+          },
+          "cleared": {
+            "a": false,
+            "i": false,
+            "u": false,
+            "e": false,
+            "o": false,
+            "M": false,
+            "F": false,
+            "H": false,
+            "S": false,
+            "T": false
+          },
+          "canDo": [],
+          "source": "ai"
+        }
+      ]
+    }
+  },
+  "get /ai/class/insight": {
+    "status": 200,
+    "response": {
+      "summary": "Belum ada anak yang macet di satu bunyi. Yang membaik minggu ini: Raka (bunyi a).",
+      "issues": [
+        {
+          "item": "Raka",
+          "problem": "Belum berlatih rutin (streak putus)"
+        },
+        {
+          "item": "Sinta",
+          "problem": "Belum berlatih rutin (streak putus)"
+        }
+      ],
+      "writer": "templat",
+      "source": "ai"
+    }
+  },
+  "get /ai/class/suggested-homework": {
+    "status": 200,
+    "response": [
+      {
+        "student": {
+          "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+          "nickname": "Raka",
+          "photoUrl": "https://contoh.id/foto/raka-baru.jpg"
+        },
+        "items": [
+          {
+            "levelId": "level-1",
+            "item": "t1-i",
+            "text": "i",
+            "reason": "Raka sedang melatih bunyi ini hari ini."
+          },
+          {
+            "levelId": "level-1",
+            "item": "t1-u",
+            "text": "u",
+            "reason": "Raka belum pernah melatih bunyi ini."
+          },
+          {
+            "levelId": "level-2",
+            "item": "t1-e",
+            "text": "e",
+            "reason": "Belum pernah dicoba"
+          }
+        ],
+        "writer": "llm",
+        "source": "ai"
+      },
+      {
+        "student": {
+          "id": "cb14a94b-ccb0-413b-8687-3777ec902ce8",
+          "nickname": "Sinta",
+          "photoUrl": null
+        },
+        "items": [
+          {
+            "levelId": "level-1",
+            "item": "t1-i",
+            "text": "i",
+            "reason": "Raka sedang melatih bunyi ini hari ini."
+          },
+          {
+            "levelId": "level-1",
+            "item": "t1-a",
+            "text": "a",
+            "reason": "Raka sudah bisa bunyi ini hari ini."
+          },
+          {
+            "levelId": "level-1",
+            "item": "t1-u",
+            "text": "u",
+            "reason": "Raka belum pernah melatih bunyi ini."
+          }
+        ],
+        "writer": "llm",
+        "source": "ai"
+      }
+    ]
+  },
+  "get /ai/students/:id/insight": {
+    "status": 200,
+    "response": {
+      "summary": "Raka sedang di level 1 (Vokal a, i, u). Belum ada bunyi yang macet. Baru naik minggu ini: a.",
+      "level": "Vokal a, i, u",
+      "issues": [],
+      "sounds": [
+        {
+          "bunyi": "a",
+          "label": "sudah_bisa",
+          "tingkat": 1,
+          "p": 0.901,
+          "tingkat_tuntas": 1,
+          "rinci": [
+            {
+              "tingkat": 1,
+              "p": 0.901,
+              "percobaan": 3,
+              "label": "sudah_bisa"
+            },
+            {
+              "tingkat": 2,
+              "p": 0.2,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 3,
+              "p": 0.15,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 4,
+              "p": 0.1,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            }
+          ],
+          "teks_label": "Sudah bisa",
+          "warna": "hijau"
+        },
+        {
+          "bunyi": "i",
+          "label": "sedang_dilatih",
+          "tingkat": 1,
+          "p": 0.109,
+          "tingkat_tuntas": 0,
+          "rinci": [
+            {
+              "tingkat": 1,
+              "p": 0.109,
+              "percobaan": 1,
+              "label": "sedang_dilatih"
+            },
+            {
+              "tingkat": 2,
+              "p": 0.2,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 3,
+              "p": 0.15,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 4,
+              "p": 0.1,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            }
+          ],
+          "teks_label": "Sedang dilatih",
+          "warna": "merah"
+        },
+        {
+          "bunyi": "u",
+          "label": "belum_dilatih",
+          "tingkat": 0,
+          "p": null,
+          "tingkat_tuntas": 0,
+          "rinci": [
+            {
+              "tingkat": 1,
+              "p": 0.3,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 2,
+              "p": 0.2,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 3,
+              "p": 0.15,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 4,
+              "p": 0.1,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            }
+          ],
+          "teks_label": "Belum dilatih",
+          "warna": "abu"
+        },
+        {
+          "bunyi": "o",
+          "label": "belum_dilatih",
+          "tingkat": 0,
+          "p": null,
+          "tingkat_tuntas": 0,
+          "rinci": [
+            {
+              "tingkat": 1,
+              "p": 0.3,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 2,
+              "p": 0.2,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 3,
+              "p": 0.15,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 4,
+              "p": 0.1,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            }
+          ],
+          "teks_label": "Belum dilatih",
+          "warna": "abu"
+        },
+        {
+          "bunyi": "M",
+          "label": "belum_dilatih",
+          "tingkat": 0,
+          "p": null,
+          "tingkat_tuntas": 0,
+          "rinci": [
+            {
+              "tingkat": 1,
+              "p": 0.3,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 2,
+              "p": 0.2,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 3,
+              "p": 0.15,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 4,
+              "p": 0.1,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            }
+          ],
+          "teks_label": "Belum dilatih",
+          "warna": "abu"
+        },
+        {
+          "bunyi": "e",
+          "label": "belum_dilatih",
+          "tingkat": 0,
+          "p": null,
+          "tingkat_tuntas": 0,
+          "rinci": [
+            {
+              "tingkat": 1,
+              "p": 0.3,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 2,
+              "p": 0.2,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 3,
+              "p": 0.15,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 4,
+              "p": 0.1,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            }
+          ],
+          "teks_label": "Belum dilatih",
+          "warna": "abu"
+        },
+        {
+          "bunyi": "F",
+          "label": "belum_dilatih",
+          "tingkat": 0,
+          "p": null,
+          "tingkat_tuntas": 0,
+          "rinci": [
+            {
+              "tingkat": 1,
+              "p": 0.3,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 2,
+              "p": 0.2,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 3,
+              "p": 0.15,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 4,
+              "p": 0.1,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            }
+          ],
+          "teks_label": "Belum dilatih",
+          "warna": "abu"
+        },
+        {
+          "bunyi": "H",
+          "label": "belum_dilatih",
+          "tingkat": 0,
+          "p": null,
+          "tingkat_tuntas": 0,
+          "rinci": [
+            {
+              "tingkat": 1,
+              "p": 0.3,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 2,
+              "p": 0.2,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 3,
+              "p": 0.15,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 4,
+              "p": 0.1,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            }
+          ],
+          "teks_label": "Belum dilatih",
+          "warna": "abu"
+        },
+        {
+          "bunyi": "S",
+          "label": "belum_dilatih",
+          "tingkat": 0,
+          "p": null,
+          "tingkat_tuntas": 0,
+          "rinci": [
+            {
+              "tingkat": 1,
+              "p": 0.3,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 2,
+              "p": 0.2,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 3,
+              "p": 0.15,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 4,
+              "p": 0.1,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            }
+          ],
+          "teks_label": "Belum dilatih",
+          "warna": "abu"
+        },
+        {
+          "bunyi": "T",
+          "label": "belum_dilatih",
+          "tingkat": 0,
+          "p": null,
+          "tingkat_tuntas": 0,
+          "rinci": [
+            {
+              "tingkat": 1,
+              "p": 0.3,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 2,
+              "p": 0.2,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 3,
+              "p": 0.15,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            },
+            {
+              "tingkat": 4,
+              "p": 0.1,
+              "percobaan": 0,
+              "label": "belum_dilatih"
+            }
+          ],
+          "teks_label": "Belum dilatih",
+          "warna": "abu"
+        }
+      ],
+      "focus": [
+        {
+          "bunyi": "i",
+          "tingkat": 1,
+          "label": "sedang_dilatih",
+          "alasan": "lemah"
+        }
+      ],
+      "advice": [
+        "Ajak Raka mengucapkan bunyi vokal /i/ secara terisolasi di depan cermin untuk mengamati bentuk bibir dan posisi lidahnya.",
+        "Gunakan media kartu bergambar yang memuat kosakata berawalan bunyi /i/ saat melatih Raka mengucapkan bunyi tersebut.",
+        "Latih Raka mengucapkan bunyi /i/ menggunakan bantuan gambar secara konsisten karena masih dalam tahap sedang dilatih."
+      ],
+      "adviceWriter": "llm",
+      "source": "ai"
+    }
+  },
+  "get /ai/students/:id/history": {
+    "status": 200,
+    "response": {
+      "daily": [
+        {
+          "date": "2026-11-14",
+          "attempts": 4,
+          "successes": 3,
+          "rate": 75
+        }
+      ],
+      "perSound": {
+        "a": [
+          {
+            "tanggal": "2026-11-14",
+            "tingkat": 1,
+            "p": 0.9008,
+            "kemajuan": 0.225
+          }
+        ],
+        "i": [
+          {
+            "tanggal": "2026-11-14",
+            "tingkat": 1,
+            "p": 0.1088,
+            "kemajuan": 0.027
+          }
+        ]
+      },
+      "source": "ai"
+    }
+  },
+  "post /ai/students/:id/ask": {
+    "request": {
+      "question": "Bunyi apa yang paling sulit untuk Raka?"
+    },
+    "status": 200,
+    "response": {
+      "answer": "Halo! Berdasarkan data latihan, bunyi yang paling perlu perhatian bagi Raka adalah bunyi i karena masih lemah dan sedang dilatih pada tahap bunyi tunggal dengan bantuan gambar.",
+      "references": [],
+      "writer": "llm",
+      "source": "ai"
+    }
+  },
+  "get /ai/students/:id/suggested-homework": {
+    "status": 200,
+    "response": {
+      "items": [
+        {
+          "levelId": "level-1",
+          "item": "t1-i",
+          "text": "i",
+          "reason": "Raka sedang melatih bunyi ini hari ini."
+        },
+        {
+          "levelId": "level-1",
+          "item": "t1-u",
+          "text": "u",
+          "reason": "Raka belum pernah melatih bunyi ini."
+        },
+        {
+          "levelId": "level-2",
+          "item": "t1-e",
+          "text": "e",
+          "reason": "Belum pernah dicoba"
+        }
+      ],
+      "writer": "llm",
+      "source": "ai"
+    }
+  },
+  "post /homework/batch": {
+    "request": {
+      "assignments": [
+        {
+          "studentId": "cb14a94b-ccb0-413b-8687-3777ec902ce8",
+          "items": [
+            {
+              "levelId": "level-1",
+              "item": "t1-i"
+            },
+            {
+              "levelId": "level-1",
+              "item": "t1-u"
+            }
+          ]
+        }
+      ],
+      "note": "Usulan AI disetujui"
+    },
+    "status": 201,
+    "response": [
+      {
+        "id": "0a807a28-b86e-43ae-9184-e95d30e39866",
+        "studentId": "cb14a94b-ccb0-413b-8687-3777ec902ce8",
+        "nickname": "Sinta",
+        "dueDate": "2026-11-14",
+        "note": "Usulan AI disetujui",
+        "status": "assigned",
+        "createdAt": "2026-11-14T14:31:11.931Z",
+        "completedAt": null,
+        "items": [
+          {
+            "id": "654bd091-b8a5-4444-b5a7-ec12f13ae009",
+            "homeworkId": "0a807a28-b86e-43ae-9184-e95d30e39866",
+            "position": 1,
+            "levelId": "level-1",
+            "levelTitle": "Vokal a, i, u",
+            "item": "t1-i",
+            "itemText": "i",
+            "requiredStars": 1,
+            "completedAt": null,
+            "attempts": 0,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-i.mp4"
+          },
+          {
+            "id": "2b231537-f538-4495-b493-cc713a1780c5",
+            "homeworkId": "0a807a28-b86e-43ae-9184-e95d30e39866",
+            "position": 2,
+            "levelId": "level-1",
+            "levelTitle": "Vokal a, i, u",
+            "item": "t1-u",
+            "itemText": "u",
+            "requiredStars": 1,
+            "completedAt": null,
+            "attempts": 0,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-u.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  "post /homework": {
+    "request": {
+      "studentId": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+      "dueDate": "2026-11-14",
+      "note": "Latihan 10 menit sebelum tidur",
+      "items": [
+        {
+          "levelId": "level-1",
+          "item": "t1-i"
+        },
+        {
+          "levelId": "level-1",
+          "item": "t1-u"
+        }
+      ]
+    },
+    "status": 201,
+    "response": {
+      "id": "bb3c3ef5-d663-48e9-a492-4445864d514b",
+      "studentId": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+      "nickname": "Raka",
+      "dueDate": "2026-11-14",
+      "note": "Latihan 10 menit sebelum tidur",
+      "status": "assigned",
+      "createdAt": "2026-11-14T14:31:11.960Z",
+      "completedAt": null,
+      "items": [
+        {
+          "id": "c510a9c9-1761-48ed-9c22-b2046c5a01d6",
+          "homeworkId": "bb3c3ef5-d663-48e9-a492-4445864d514b",
+          "position": 1,
+          "levelId": "level-1",
+          "levelTitle": "Vokal a, i, u",
+          "item": "t1-i",
+          "itemText": "i",
+          "requiredStars": 1,
+          "completedAt": null,
+          "attempts": 0,
+          "bestStars": 0,
+          "tutorialUrl": "/tutorial/t1-i.mp4"
+        },
+        {
+          "id": "f2db142b-2b31-4298-a8f8-2f8317cbef7b",
+          "homeworkId": "bb3c3ef5-d663-48e9-a492-4445864d514b",
+          "position": 2,
+          "levelId": "level-1",
+          "levelTitle": "Vokal a, i, u",
+          "item": "t1-u",
+          "itemText": "u",
+          "requiredStars": 1,
+          "completedAt": null,
+          "attempts": 0,
+          "bestStars": 0,
+          "tutorialUrl": "/tutorial/t1-u.mp4"
+        }
+      ]
+    }
+  },
+  "get /parent/children": {
+    "status": 200,
+    "response": [
+      {
+        "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+        "nickname": "Raka",
+        "photoUrl": "https://contoh.id/foto/raka-baru.jpg",
+        "totalPoints": 10,
+        "classroomName": "Kelas 1"
+      }
+    ]
+  },
+  "get /parent/children/:id/homework": {
+    "status": 200,
+    "response": [
+      {
+        "id": "bb3c3ef5-d663-48e9-a492-4445864d514b",
+        "studentId": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+        "nickname": "Raka",
+        "dueDate": "2026-11-14",
+        "note": "Latihan 10 menit sebelum tidur",
+        "status": "assigned",
+        "createdAt": "2026-11-14T14:31:11.960Z",
+        "completedAt": null,
+        "items": [
+          {
+            "id": "c510a9c9-1761-48ed-9c22-b2046c5a01d6",
+            "homeworkId": "bb3c3ef5-d663-48e9-a492-4445864d514b",
+            "position": 1,
+            "levelId": "level-1",
+            "levelTitle": "Vokal a, i, u",
+            "item": "t1-i",
+            "itemText": "i",
+            "requiredStars": 1,
+            "completedAt": null,
+            "attempts": 0,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-i.mp4"
+          },
+          {
+            "id": "f2db142b-2b31-4298-a8f8-2f8317cbef7b",
+            "homeworkId": "bb3c3ef5-d663-48e9-a492-4445864d514b",
+            "position": 2,
+            "levelId": "level-1",
+            "levelTitle": "Vokal a, i, u",
+            "item": "t1-u",
+            "itemText": "u",
+            "requiredStars": 1,
+            "completedAt": null,
+            "attempts": 0,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-u.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  "post /parent/children/:id/practice-token": {
+    "status": 200,
+    "response": {
+      "token": "eyJhbGciOiJIUzI1NiIs...",
+      "role": "student",
+      "student": {
+        "id": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+        "nickname": "Raka",
+        "photoUrl": "https://contoh.id/foto/raka-baru.jpg"
+      }
+    }
+  },
+  "get /parent/children/:id/streak": {
+    "status": 200,
+    "response": {
+      "current": 1,
+      "longest": 1,
+      "lastActiveDay": "2026-11-14",
+      "dailyTarget": 3,
+      "todayCount": 4,
+      "last7Days": [
+        {
+          "day": "2026-11-08",
+          "count": 0,
+          "active": false
+        },
+        {
+          "day": "2026-11-09",
+          "count": 0,
+          "active": false
+        },
+        {
+          "day": "2026-11-10",
+          "count": 0,
+          "active": false
+        },
+        {
+          "day": "2026-11-11",
+          "count": 0,
+          "active": false
+        },
+        {
+          "day": "2026-11-12",
+          "count": 0,
+          "active": false
+        },
+        {
+          "day": "2026-11-13",
+          "count": 0,
+          "active": false
+        },
+        {
+          "day": "2026-11-14",
+          "count": 4,
+          "active": true
+        }
+      ]
+    }
+  },
+  "get /parent/children/:id/progress": {
+    "status": 200,
+    "response": [
+      {
+        "id": "level-1",
+        "category": "vokal",
+        "orderNo": 1,
+        "title": "Vokal a, i, u",
+        "items": [
+          {
+            "id": "t1-a",
+            "text": "a",
+            "urutan": [
+              "a"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 3,
+            "tutorialUrl": "/tutorial/t1-a.mp4"
+          },
+          {
+            "id": "t1-i",
+            "text": "i",
+            "urutan": [
+              "i"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 2,
+            "tutorialUrl": "/tutorial/t1-i.mp4"
+          },
+          {
+            "id": "t1-u",
+            "text": "u",
+            "urutan": [
+              "u"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 2,
+            "tutorialUrl": "/tutorial/t1-u.mp4"
+          },
+          {
+            "id": "t2-a",
+            "text": "a",
+            "urutan": [
+              "a"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-i",
+            "text": "i",
+            "urutan": [
+              "i"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-u",
+            "text": "u",
+            "urutan": [
+              "u"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": null,
+        "bestStars": 3,
+        "progress": 1,
+        "attempts": 5,
+        "status": "tuntas",
+        "lockedByTeacher": false,
+        "unlocked": true,
+        "source": "stars"
+      },
+      {
+        "id": "level-2",
+        "category": "vokal",
+        "orderNo": 2,
+        "title": "Vokal e, o",
+        "items": [
+          {
+            "id": "t1-o",
+            "text": "o",
+            "urutan": [
+              "o"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-o.mp4"
+          },
+          {
+            "id": "t1-e",
+            "text": "e",
+            "urutan": [
+              "e"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-e.mp4"
+          },
+          {
+            "id": "t2-o",
+            "text": "o",
+            "urutan": [
+              "o"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-e",
+            "text": "e",
+            "urutan": [
+              "e"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": "level-1",
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terbuka",
+        "lockedByTeacher": false,
+        "unlocked": true,
+        "source": "stars"
+      },
+      {
+        "id": "level-3",
+        "category": "konsonan",
+        "orderNo": 3,
+        "title": "Konsonan bibir: m/b/p dan f/v",
+        "items": [
+          {
+            "id": "t1-M",
+            "text": "m",
+            "urutan": [
+              "M"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-M.mp4"
+          },
+          {
+            "id": "t1-F",
+            "text": "f",
+            "urutan": [
+              "F"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-F.mp4"
+          },
+          {
+            "id": "t2-M",
+            "text": "m",
+            "urutan": [
+              "M"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-F",
+            "text": "f",
+            "urutan": [
+              "F"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": "level-2",
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terbuka",
+        "lockedByTeacher": false,
+        "unlocked": true,
+        "source": "stars"
+      },
+      {
+        "id": "level-4",
+        "category": "konsonan",
+        "orderNo": 4,
+        "title": "Hembusan h, desis, dan huruf lidah",
+        "items": [
+          {
+            "id": "t1-H",
+            "text": "h",
+            "urutan": [
+              "H"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-H.mp4"
+          },
+          {
+            "id": "t1-S",
+            "text": "s",
+            "urutan": [
+              "S"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t1-T",
+            "text": "t",
+            "urutan": [
+              "T"
+            ],
+            "tingkat": 1,
+            "bantuanVisual": true,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-H",
+            "text": "h",
+            "urutan": [
+              "H"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-S",
+            "text": "s",
+            "urutan": [
+              "S"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t2-T",
+            "text": "t",
+            "urutan": [
+              "T"
+            ],
+            "tingkat": 2,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": "level-3",
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terkunci",
+        "lockedByTeacher": true,
+        "unlocked": false,
+        "source": "stars"
+      },
+      {
+        "id": "level-5",
+        "category": "suku_kata",
+        "orderNo": 5,
+        "title": "Suku kata",
+        "items": [
+          {
+            "id": "t3-ma",
+            "text": "ma",
+            "urutan": [
+              "M",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t3-ma.mp4"
+          },
+          {
+            "id": "t3-mi",
+            "text": "mi",
+            "urutan": [
+              "M",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-mu",
+            "text": "mu",
+            "urutan": [
+              "M",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-mo",
+            "text": "mo",
+            "urutan": [
+              "M",
+              "o"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ba",
+            "text": "ba",
+            "urutan": [
+              "M",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-bi",
+            "text": "bi",
+            "urutan": [
+              "M",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-bu",
+            "text": "bu",
+            "urutan": [
+              "M",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-bo",
+            "text": "bo",
+            "urutan": [
+              "M",
+              "o"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-pa",
+            "text": "pa",
+            "urutan": [
+              "M",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-pi",
+            "text": "pi",
+            "urutan": [
+              "M",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-pu",
+            "text": "pu",
+            "urutan": [
+              "M",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-po",
+            "text": "po",
+            "urutan": [
+              "M",
+              "o"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-me",
+            "text": "me",
+            "urutan": [
+              "M",
+              "e"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-be",
+            "text": "be",
+            "urutan": [
+              "M",
+              "e"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-pe",
+            "text": "pe",
+            "urutan": [
+              "M",
+              "e"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-fa",
+            "text": "fa",
+            "urutan": [
+              "F",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t3-fa.mp4"
+          },
+          {
+            "id": "t3-fi",
+            "text": "fi",
+            "urutan": [
+              "F",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-fu",
+            "text": "fu",
+            "urutan": [
+              "F",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-va",
+            "text": "va",
+            "urutan": [
+              "F",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-wa",
+            "text": "wa",
+            "urutan": [
+              "u",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t3-wa.mp4"
+          },
+          {
+            "id": "t3-ya",
+            "text": "ya",
+            "urutan": [
+              "i",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t3-ya.mp4"
+          },
+          {
+            "id": "t3-ha",
+            "text": "ha",
+            "urutan": [
+              "H",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t3-ha.mp4"
+          },
+          {
+            "id": "t3-hi",
+            "text": "hi",
+            "urutan": [
+              "H",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-hu",
+            "text": "hu",
+            "urutan": [
+              "H",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ho",
+            "text": "ho",
+            "urutan": [
+              "H",
+              "o"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-sa",
+            "text": "sa",
+            "urutan": [
+              "S",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-si",
+            "text": "si",
+            "urutan": [
+              "S",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-su",
+            "text": "su",
+            "urutan": [
+              "S",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ca",
+            "text": "ca",
+            "urutan": [
+              "S",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ja",
+            "text": "ja",
+            "urutan": [
+              "S",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ta",
+            "text": "ta",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ti",
+            "text": "ti",
+            "urutan": [
+              "T",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-tu",
+            "text": "tu",
+            "urutan": [
+              "T",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-da",
+            "text": "da",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ka",
+            "text": "ka",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ki",
+            "text": "ki",
+            "urutan": [
+              "T",
+              "i"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ku",
+            "text": "ku",
+            "urutan": [
+              "T",
+              "u"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ga",
+            "text": "ga",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-la",
+            "text": "la",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-na",
+            "text": "na",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t3-ra",
+            "text": "ra",
+            "urutan": [
+              "T",
+              "a"
+            ],
+            "tingkat": 3,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": "level-4",
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terkunci",
+        "lockedByTeacher": true,
+        "unlocked": false,
+        "source": "stars"
+      },
+      {
+        "id": "level-6",
+        "category": "kata",
+        "orderNo": 6,
+        "title": "Kata",
+        "items": [
+          {
+            "id": "t4-mama",
+            "text": "mama",
+            "urutan": [
+              "M",
+              "a",
+              "M",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t4-mama.mp4"
+          },
+          {
+            "id": "t4-mami",
+            "text": "mami",
+            "urutan": [
+              "M",
+              "a",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-oma",
+            "text": "oma",
+            "urutan": [
+              "o",
+              "M",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-ayam",
+            "text": "ayam",
+            "urutan": [
+              "a",
+              "i",
+              "a",
+              "M"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-imam",
+            "text": "imam",
+            "urutan": [
+              "i",
+              "M",
+              "a",
+              "M"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-umum",
+            "text": "umum",
+            "urutan": [
+              "u",
+              "M",
+              "u",
+              "M"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-maaf",
+            "text": "maaf",
+            "urutan": [
+              "M",
+              "a",
+              "F"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-mau",
+            "text": "mau",
+            "urutan": [
+              "M",
+              "a",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-ayo",
+            "text": "ayo",
+            "urutan": [
+              "a",
+              "i",
+              "o"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-hiu",
+            "text": "hiu",
+            "urutan": [
+              "H",
+              "i",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-hama",
+            "text": "hama",
+            "urutan": [
+              "H",
+              "a",
+              "M",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-hawa",
+            "text": "hawa",
+            "urutan": [
+              "H",
+              "a",
+              "u",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-ayah",
+            "text": "ayah",
+            "urutan": [
+              "a",
+              "i",
+              "a",
+              "H"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-wahyu",
+            "text": "wahyu",
+            "urutan": [
+              "u",
+              "a",
+              "H",
+              "i",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-papa",
+            "text": "papa",
+            "urutan": [
+              "M",
+              "a",
+              "M",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-bola",
+            "text": "bola",
+            "urutan": [
+              "M",
+              "o",
+              "T",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-buku",
+            "text": "buku",
+            "urutan": [
+              "M",
+              "u",
+              "T",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-baju",
+            "text": "baju",
+            "urutan": [
+              "M",
+              "a",
+              "S",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-mata",
+            "text": "mata",
+            "urutan": [
+              "M",
+              "a",
+              "T",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-pipi",
+            "text": "pipi",
+            "urutan": [
+              "M",
+              "i",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-bibi",
+            "text": "bibi",
+            "urutan": [
+              "M",
+              "i",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-bumi",
+            "text": "bumi",
+            "urutan": [
+              "M",
+              "u",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-pita",
+            "text": "pita",
+            "urutan": [
+              "M",
+              "i",
+              "T",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-palu",
+            "text": "palu",
+            "urutan": [
+              "M",
+              "a",
+              "T",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-mobil",
+            "text": "mobil",
+            "urutan": [
+              "M",
+              "o",
+              "M",
+              "i",
+              "T"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-ibu",
+            "text": "ibu",
+            "urutan": [
+              "i",
+              "M",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-api",
+            "text": "api",
+            "urutan": [
+              "a",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-ubi",
+            "text": "ubi",
+            "urutan": [
+              "u",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": false,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-topi",
+            "text": "topi",
+            "urutan": [
+              "T",
+              "o",
+              "M",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-sapu",
+            "text": "sapu",
+            "urutan": [
+              "S",
+              "a",
+              "M",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-kaki",
+            "text": "kaki",
+            "urutan": [
+              "T",
+              "a",
+              "T",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-kuda",
+            "text": "kuda",
+            "urutan": [
+              "T",
+              "u",
+              "T",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-roti",
+            "text": "roti",
+            "urutan": [
+              "T",
+              "o",
+              "T",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-dadu",
+            "text": "dadu",
+            "urutan": [
+              "T",
+              "a",
+              "T",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-susu",
+            "text": "susu",
+            "urutan": [
+              "S",
+              "u",
+              "S",
+              "u"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-gigi",
+            "text": "gigi",
+            "urutan": [
+              "T",
+              "i",
+              "T",
+              "i"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          },
+          {
+            "id": "t4-meja",
+            "text": "meja",
+            "urutan": [
+              "M",
+              "e",
+              "S",
+              "a"
+            ],
+            "tingkat": 4,
+            "bantuanVisual": false,
+            "dinilaiSebagian": true,
+            "bestStars": 0,
+            "tutorialUrl": null
+          }
+        ],
+        "unlockAfterLevelId": "level-5",
+        "bestStars": 0,
+        "progress": 0,
+        "attempts": 0,
+        "status": "terkunci",
+        "lockedByTeacher": true,
+        "unlocked": false,
+        "source": "stars"
+      }
+    ]
+  },
+  "get /parent/children/:id/chart": {
+    "status": 200,
+    "response": {
+      "days": 7,
+      "labels": [
+        "Min 8/11",
+        "Sen 9/11",
+        "Sel 10/11",
+        "Rab 11/11",
+        "Kam 12/11",
+        "Jum 13/11",
+        "Sab 14/11"
+      ],
+      "series": {
+        "attempts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        "correct": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        "accuracy": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          72
+        ],
+        "points": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          80
+        ]
+      },
+      "daily": [
+        {
+          "date": "2026-11-08",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Min 8/11"
+        },
+        {
+          "date": "2026-11-09",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Sen 9/11"
+        },
+        {
+          "date": "2026-11-10",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Sel 10/11"
+        },
+        {
+          "date": "2026-11-11",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Rab 11/11"
+        },
+        {
+          "date": "2026-11-12",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Kam 12/11"
+        },
+        {
+          "date": "2026-11-13",
+          "attempts": 0,
+          "correct": 0,
+          "stars": 0,
+          "accuracy": 0,
+          "school": 0,
+          "home": 0,
+          "points": 0,
+          "label": "Jum 13/11"
+        },
+        {
+          "date": "2026-11-14",
+          "attempts": 5,
+          "correct": 4,
+          "stars": 8,
+          "accuracy": 72,
+          "school": 3,
+          "home": 2,
+          "points": 80,
+          "label": "Sab 14/11"
+        }
+      ],
+      "summary": {
+        "practiceDays": 1,
+        "attempts": 5,
+        "correct": 4,
+        "points": 80,
+        "accuracy": 72
+      }
+    }
+  },
+  "get /parent/children/:id/weekly-report": {
+    "status": 200,
+    "response": {
+      "achieved": "Raka sudah bisa mengucapkan bunyi suara dengan melihat bantuan gambar yang ada.",
+      "practising": "Raka sedang berlatih mengucapkan bunyi suara lain dengan bantuan gambar yang sama.",
+      "howToHelp": "Ucapkan kata pelan-pelan lebih dulu, lalu minta Raka meniru sambil melihat cermin.",
+      "practiceDays": 1,
+      "references": [],
+      "writer": "llm",
+      "source": "ai"
+    }
+  },
+  "post /parent/children/:id/ask": {
+    "request": {
+      "question": "Apa yang bisa kami latih di rumah?"
+    },
+    "status": 200,
+    "response": {
+      "answer": "Halo! Berdasarkan data latihan, bunyi yang paling perlu perhatian bagi Raka adalah bunyi i karena masih lemah dan sedang dilatih pada tahap bunyi tunggal dengan bantuan gambar.",
+      "references": [],
+      "writer": "llm",
+      "source": "ai"
+    }
+  },
+  "get /homework/submissions": {
+    "status": 200,
+    "response": [
+      {
+        "id": "bb3c3ef5-d663-48e9-a492-4445864d514b",
+        "studentId": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+        "nickname": "Raka",
+        "dueDate": "2026-11-14",
+        "note": "Latihan 10 menit sebelum tidur",
+        "status": "done",
+        "createdAt": "2026-11-14T14:31:11.960Z",
+        "completedAt": "2026-11-14T14:31:12.069Z",
+        "items": [
+          {
+            "id": "c510a9c9-1761-48ed-9c22-b2046c5a01d6",
+            "homeworkId": "bb3c3ef5-d663-48e9-a492-4445864d514b",
+            "position": 1,
+            "levelId": "level-1",
+            "levelTitle": "Vokal a, i, u",
+            "item": "t1-i",
+            "itemText": "i",
+            "requiredStars": 1,
+            "completedAt": "2026-11-14T14:31:12.032Z",
+            "attempts": 1,
+            "bestStars": 2,
+            "tutorialUrl": "/tutorial/t1-i.mp4"
+          },
+          {
+            "id": "f2db142b-2b31-4298-a8f8-2f8317cbef7b",
+            "homeworkId": "bb3c3ef5-d663-48e9-a492-4445864d514b",
+            "position": 2,
+            "levelId": "level-1",
+            "levelTitle": "Vokal a, i, u",
+            "item": "t1-u",
+            "itemText": "u",
+            "requiredStars": 1,
+            "completedAt": "2026-11-14T14:31:12.069Z",
+            "attempts": 1,
+            "bestStars": 2,
+            "tutorialUrl": "/tutorial/t1-u.mp4"
+          }
+        ]
+      },
+      {
+        "id": "0a807a28-b86e-43ae-9184-e95d30e39866",
+        "studentId": "cb14a94b-ccb0-413b-8687-3777ec902ce8",
+        "nickname": "Sinta",
+        "dueDate": "2026-11-14",
+        "note": "Usulan AI disetujui",
+        "status": "assigned",
+        "createdAt": "2026-11-14T14:31:11.931Z",
+        "completedAt": null,
+        "items": [
+          {
+            "id": "654bd091-b8a5-4444-b5a7-ec12f13ae009",
+            "homeworkId": "0a807a28-b86e-43ae-9184-e95d30e39866",
+            "position": 1,
+            "levelId": "level-1",
+            "levelTitle": "Vokal a, i, u",
+            "item": "t1-i",
+            "itemText": "i",
+            "requiredStars": 1,
+            "completedAt": null,
+            "attempts": 0,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-i.mp4"
+          },
+          {
+            "id": "2b231537-f538-4495-b493-cc713a1780c5",
+            "homeworkId": "0a807a28-b86e-43ae-9184-e95d30e39866",
+            "position": 2,
+            "levelId": "level-1",
+            "levelTitle": "Vokal a, i, u",
+            "item": "t1-u",
+            "itemText": "u",
+            "requiredStars": 1,
+            "completedAt": null,
+            "attempts": 0,
+            "bestStars": 0,
+            "tutorialUrl": "/tutorial/t1-u.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  "get /teacher/rewards": {
+    "status": 200,
+    "response": [
+      {
+        "id": "4fc4471d-7cf6-493b-895c-c4529945e06a",
+        "name": "Stiker bintang",
+        "imageUrl": null,
+        "costPoints": 30,
+        "stock": null,
+        "active": true
+      },
+      {
+        "id": "3c93d13c-1daf-405a-b642-9974eb0d55bf",
+        "name": "Pensil warna",
+        "imageUrl": null,
+        "costPoints": 100,
+        "stock": 10,
+        "active": true
+      },
+      {
+        "id": "3d479ae4-9058-49fc-b690-cb94ef95dd48",
+        "name": "Buku gambar",
+        "imageUrl": null,
+        "costPoints": 200,
+        "stock": 5,
+        "active": true
+      }
+    ]
+  },
+  "post /teacher/rewards": {
+    "request": {
+      "name": "Krayon",
+      "costPoints": 50,
+      "stock": 20
+    },
+    "status": 201,
+    "response": {
+      "id": "ec631fce-0d96-4f62-a7ba-f984b28c08b5",
+      "name": "Krayon",
+      "imageUrl": null,
+      "costPoints": 50,
+      "stock": 20,
+      "active": true
+    }
+  },
+  "get /teacher/redemptions": {
+    "status": 200,
+    "response": [
+      {
+        "id": "1b4b102e-1983-44aa-861d-52b6b465850d",
+        "studentId": "cdd632a6-12a5-4ba0-9c36-d0ff99d9c10a",
+        "nickname": "Raka",
+        "rewardName": "Stiker bintang",
+        "pointsSpent": 30,
+        "status": "requested",
+        "createdAt": "2026-11-14T14:31:11.547Z",
+        "givenAt": null
+      }
+    ]
+  },
+  "post /teacher/redemptions/:id/give": {
+    "status": 200,
+    "response": {
+      "id": "1b4b102e-1983-44aa-861d-52b6b465850d",
+      "status": "given",
+      "givenAt": "2026-11-14T14:31:12.219Z"
+    }
+  }
+}

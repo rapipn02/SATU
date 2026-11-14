@@ -1,0 +1,2459 @@
+{
+ "kelas_ringkasan": {
+  "ringkasan": "Belum ada anak yang macet di satu bunyi. Yang membaik minggu ini: Raka (bunyi a).",
+  "sumber": "templat"
+ },
+ "kurikulum": {
+  "bunyi": [
+   "a",
+   "i",
+   "u",
+   "o",
+   "M",
+   "e",
+   "F",
+   "H",
+   "S",
+   "T"
+  ],
+  "tingkat": [
+   {
+    "tingkat": 1,
+    "nama": "Bunyi dengan bantuan"
+   },
+   {
+    "tingkat": 2,
+    "nama": "Bunyi tanpa bantuan"
+   },
+   {
+    "tingkat": 3,
+    "nama": "Suku kata"
+   },
+   {
+    "tingkat": 4,
+    "nama": "Kata 2 suku"
+   }
+  ],
+  "parameter": {
+   "1": {
+    "awal": 0.3,
+    "belajar": 0.05,
+    "tebak": 0.35,
+    "salah": 0.1
+   },
+   "2": {
+    "awal": 0.2,
+    "belajar": 0.05,
+    "tebak": 0.35,
+    "salah": 0.1
+   },
+   "3": {
+    "awal": 0.15,
+    "belajar": 0.05,
+    "tebak": 0.35,
+    "salah": 0.1
+   },
+   "4": {
+    "awal": 0.1,
+    "belajar": 0.05,
+    "tebak": 0.35,
+    "salah": 0.1
+   }
+  },
+  "item": [
+   {
+    "id": "t1-a",
+    "tingkat": 1,
+    "teks": "a",
+    "urutan": [
+     "a"
+    ],
+    "bantuan_visual": true,
+    "level": 1,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t1-i",
+    "tingkat": 1,
+    "teks": "i",
+    "urutan": [
+     "i"
+    ],
+    "bantuan_visual": true,
+    "level": 1,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t1-u",
+    "tingkat": 1,
+    "teks": "u",
+    "urutan": [
+     "u"
+    ],
+    "bantuan_visual": true,
+    "level": 1,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t1-o",
+    "tingkat": 1,
+    "teks": "o",
+    "urutan": [
+     "o"
+    ],
+    "bantuan_visual": true,
+    "level": 2,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t1-M",
+    "tingkat": 1,
+    "teks": "m",
+    "urutan": [
+     "M"
+    ],
+    "bantuan_visual": true,
+    "level": 3,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t1-e",
+    "tingkat": 1,
+    "teks": "e",
+    "urutan": [
+     "e"
+    ],
+    "bantuan_visual": true,
+    "level": 2,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t1-F",
+    "tingkat": 1,
+    "teks": "f",
+    "urutan": [
+     "F"
+    ],
+    "bantuan_visual": true,
+    "level": 3,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t1-H",
+    "tingkat": 1,
+    "teks": "h",
+    "urutan": [
+     "H"
+    ],
+    "bantuan_visual": true,
+    "level": 4,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t1-S",
+    "tingkat": 1,
+    "teks": "s",
+    "urutan": [
+     "S"
+    ],
+    "bantuan_visual": true,
+    "level": 4,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t1-T",
+    "tingkat": 1,
+    "teks": "t",
+    "urutan": [
+     "T"
+    ],
+    "bantuan_visual": true,
+    "level": 4,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t2-a",
+    "tingkat": 2,
+    "teks": "a",
+    "urutan": [
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 1,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t2-i",
+    "tingkat": 2,
+    "teks": "i",
+    "urutan": [
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 1,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t2-u",
+    "tingkat": 2,
+    "teks": "u",
+    "urutan": [
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 1,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t2-o",
+    "tingkat": 2,
+    "teks": "o",
+    "urutan": [
+     "o"
+    ],
+    "bantuan_visual": false,
+    "level": 2,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t2-M",
+    "tingkat": 2,
+    "teks": "m",
+    "urutan": [
+     "M"
+    ],
+    "bantuan_visual": false,
+    "level": 3,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t2-e",
+    "tingkat": 2,
+    "teks": "e",
+    "urutan": [
+     "e"
+    ],
+    "bantuan_visual": false,
+    "level": 2,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t2-F",
+    "tingkat": 2,
+    "teks": "f",
+    "urutan": [
+     "F"
+    ],
+    "bantuan_visual": false,
+    "level": 3,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t2-H",
+    "tingkat": 2,
+    "teks": "h",
+    "urutan": [
+     "H"
+    ],
+    "bantuan_visual": false,
+    "level": 4,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t2-S",
+    "tingkat": 2,
+    "teks": "s",
+    "urutan": [
+     "S"
+    ],
+    "bantuan_visual": false,
+    "level": 4,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t2-T",
+    "tingkat": 2,
+    "teks": "t",
+    "urutan": [
+     "T"
+    ],
+    "bantuan_visual": false,
+    "level": 4,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-ma",
+    "tingkat": 3,
+    "teks": "ma",
+    "urutan": [
+     "M",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-mi",
+    "tingkat": 3,
+    "teks": "mi",
+    "urutan": [
+     "M",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-mu",
+    "tingkat": 3,
+    "teks": "mu",
+    "urutan": [
+     "M",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-mo",
+    "tingkat": 3,
+    "teks": "mo",
+    "urutan": [
+     "M",
+     "o"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-ba",
+    "tingkat": 3,
+    "teks": "ba",
+    "urutan": [
+     "M",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-bi",
+    "tingkat": 3,
+    "teks": "bi",
+    "urutan": [
+     "M",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-bu",
+    "tingkat": 3,
+    "teks": "bu",
+    "urutan": [
+     "M",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-bo",
+    "tingkat": 3,
+    "teks": "bo",
+    "urutan": [
+     "M",
+     "o"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-pa",
+    "tingkat": 3,
+    "teks": "pa",
+    "urutan": [
+     "M",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-pi",
+    "tingkat": 3,
+    "teks": "pi",
+    "urutan": [
+     "M",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-pu",
+    "tingkat": 3,
+    "teks": "pu",
+    "urutan": [
+     "M",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-po",
+    "tingkat": 3,
+    "teks": "po",
+    "urutan": [
+     "M",
+     "o"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-me",
+    "tingkat": 3,
+    "teks": "me",
+    "urutan": [
+     "M",
+     "e"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-be",
+    "tingkat": 3,
+    "teks": "be",
+    "urutan": [
+     "M",
+     "e"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-pe",
+    "tingkat": 3,
+    "teks": "pe",
+    "urutan": [
+     "M",
+     "e"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-fa",
+    "tingkat": 3,
+    "teks": "fa",
+    "urutan": [
+     "F",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-fi",
+    "tingkat": 3,
+    "teks": "fi",
+    "urutan": [
+     "F",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-fu",
+    "tingkat": 3,
+    "teks": "fu",
+    "urutan": [
+     "F",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-va",
+    "tingkat": 3,
+    "teks": "va",
+    "urutan": [
+     "F",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-wa",
+    "tingkat": 3,
+    "teks": "wa",
+    "urutan": [
+     "u",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-ya",
+    "tingkat": 3,
+    "teks": "ya",
+    "urutan": [
+     "i",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-ha",
+    "tingkat": 3,
+    "teks": "ha",
+    "urutan": [
+     "H",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-hi",
+    "tingkat": 3,
+    "teks": "hi",
+    "urutan": [
+     "H",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-hu",
+    "tingkat": 3,
+    "teks": "hu",
+    "urutan": [
+     "H",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-ho",
+    "tingkat": 3,
+    "teks": "ho",
+    "urutan": [
+     "H",
+     "o"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t3-sa",
+    "tingkat": 3,
+    "teks": "sa",
+    "urutan": [
+     "S",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-si",
+    "tingkat": 3,
+    "teks": "si",
+    "urutan": [
+     "S",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-su",
+    "tingkat": 3,
+    "teks": "su",
+    "urutan": [
+     "S",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-ca",
+    "tingkat": 3,
+    "teks": "ca",
+    "urutan": [
+     "S",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-ja",
+    "tingkat": 3,
+    "teks": "ja",
+    "urutan": [
+     "S",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-ta",
+    "tingkat": 3,
+    "teks": "ta",
+    "urutan": [
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-ti",
+    "tingkat": 3,
+    "teks": "ti",
+    "urutan": [
+     "T",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-tu",
+    "tingkat": 3,
+    "teks": "tu",
+    "urutan": [
+     "T",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-da",
+    "tingkat": 3,
+    "teks": "da",
+    "urutan": [
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-ka",
+    "tingkat": 3,
+    "teks": "ka",
+    "urutan": [
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-ki",
+    "tingkat": 3,
+    "teks": "ki",
+    "urutan": [
+     "T",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-ku",
+    "tingkat": 3,
+    "teks": "ku",
+    "urutan": [
+     "T",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-ga",
+    "tingkat": 3,
+    "teks": "ga",
+    "urutan": [
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-la",
+    "tingkat": 3,
+    "teks": "la",
+    "urutan": [
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-na",
+    "tingkat": 3,
+    "teks": "na",
+    "urutan": [
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t3-ra",
+    "tingkat": 3,
+    "teks": "ra",
+    "urutan": [
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 5,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-mama",
+    "tingkat": 4,
+    "teks": "mama",
+    "urutan": [
+     "M",
+     "a",
+     "M",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-mami",
+    "tingkat": 4,
+    "teks": "mami",
+    "urutan": [
+     "M",
+     "a",
+     "M",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-oma",
+    "tingkat": 4,
+    "teks": "oma",
+    "urutan": [
+     "o",
+     "M",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-ayam",
+    "tingkat": 4,
+    "teks": "ayam",
+    "urutan": [
+     "a",
+     "i",
+     "a",
+     "M"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-imam",
+    "tingkat": 4,
+    "teks": "imam",
+    "urutan": [
+     "i",
+     "M",
+     "a",
+     "M"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-umum",
+    "tingkat": 4,
+    "teks": "umum",
+    "urutan": [
+     "u",
+     "M",
+     "u",
+     "M"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-maaf",
+    "tingkat": 4,
+    "teks": "maaf",
+    "urutan": [
+     "M",
+     "a",
+     "F"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-mau",
+    "tingkat": 4,
+    "teks": "mau",
+    "urutan": [
+     "M",
+     "a",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-ayo",
+    "tingkat": 4,
+    "teks": "ayo",
+    "urutan": [
+     "a",
+     "i",
+     "o"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-hiu",
+    "tingkat": 4,
+    "teks": "hiu",
+    "urutan": [
+     "H",
+     "i",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-hama",
+    "tingkat": 4,
+    "teks": "hama",
+    "urutan": [
+     "H",
+     "a",
+     "M",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-hawa",
+    "tingkat": 4,
+    "teks": "hawa",
+    "urutan": [
+     "H",
+     "a",
+     "u",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-ayah",
+    "tingkat": 4,
+    "teks": "ayah",
+    "urutan": [
+     "a",
+     "i",
+     "a",
+     "H"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-wahyu",
+    "tingkat": 4,
+    "teks": "wahyu",
+    "urutan": [
+     "u",
+     "a",
+     "H",
+     "i",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-papa",
+    "tingkat": 4,
+    "teks": "papa",
+    "urutan": [
+     "M",
+     "a",
+     "M",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-bola",
+    "tingkat": 4,
+    "teks": "bola",
+    "urutan": [
+     "M",
+     "o",
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-buku",
+    "tingkat": 4,
+    "teks": "buku",
+    "urutan": [
+     "M",
+     "u",
+     "T",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-baju",
+    "tingkat": 4,
+    "teks": "baju",
+    "urutan": [
+     "M",
+     "a",
+     "S",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-mata",
+    "tingkat": 4,
+    "teks": "mata",
+    "urutan": [
+     "M",
+     "a",
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-pipi",
+    "tingkat": 4,
+    "teks": "pipi",
+    "urutan": [
+     "M",
+     "i",
+     "M",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-bibi",
+    "tingkat": 4,
+    "teks": "bibi",
+    "urutan": [
+     "M",
+     "i",
+     "M",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-bumi",
+    "tingkat": 4,
+    "teks": "bumi",
+    "urutan": [
+     "M",
+     "u",
+     "M",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-pita",
+    "tingkat": 4,
+    "teks": "pita",
+    "urutan": [
+     "M",
+     "i",
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-palu",
+    "tingkat": 4,
+    "teks": "palu",
+    "urutan": [
+     "M",
+     "a",
+     "T",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-mobil",
+    "tingkat": 4,
+    "teks": "mobil",
+    "urutan": [
+     "M",
+     "o",
+     "M",
+     "i",
+     "T"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-ibu",
+    "tingkat": 4,
+    "teks": "ibu",
+    "urutan": [
+     "i",
+     "M",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-api",
+    "tingkat": 4,
+    "teks": "api",
+    "urutan": [
+     "a",
+     "M",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-ubi",
+    "tingkat": 4,
+    "teks": "ubi",
+    "urutan": [
+     "u",
+     "M",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": false
+   },
+   {
+    "id": "t4-topi",
+    "tingkat": 4,
+    "teks": "topi",
+    "urutan": [
+     "T",
+     "o",
+     "M",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-sapu",
+    "tingkat": 4,
+    "teks": "sapu",
+    "urutan": [
+     "S",
+     "a",
+     "M",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-kaki",
+    "tingkat": 4,
+    "teks": "kaki",
+    "urutan": [
+     "T",
+     "a",
+     "T",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-kuda",
+    "tingkat": 4,
+    "teks": "kuda",
+    "urutan": [
+     "T",
+     "u",
+     "T",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-roti",
+    "tingkat": 4,
+    "teks": "roti",
+    "urutan": [
+     "T",
+     "o",
+     "T",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-dadu",
+    "tingkat": 4,
+    "teks": "dadu",
+    "urutan": [
+     "T",
+     "a",
+     "T",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-susu",
+    "tingkat": 4,
+    "teks": "susu",
+    "urutan": [
+     "S",
+     "u",
+     "S",
+     "u"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-gigi",
+    "tingkat": 4,
+    "teks": "gigi",
+    "urutan": [
+     "T",
+     "i",
+     "T",
+     "i"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   },
+   {
+    "id": "t4-meja",
+    "tingkat": 4,
+    "teks": "meja",
+    "urutan": [
+     "M",
+     "e",
+     "S",
+     "a"
+    ],
+    "bantuan_visual": false,
+    "level": 6,
+    "dinilai_sebagian": true
+   }
+  ]
+ },
+ "laporan_mingguan": {
+  "sudah_bisa": "Raka sudah bisa mengucapkan bunyi suara dengan melihat bantuan gambar yang ada.",
+  "sedang_dilatih": "Raka sedang berlatih mengucapkan bunyi suara lain dengan bantuan gambar yang sama.",
+  "cara_membantu": "Ucapkan kata pelan-pelan lebih dulu, lalu minta Raka meniru sambil melihat cermin.",
+  "hari_latihan": 1,
+  "rujukan": [],
+  "sumber": "llm"
+ },
+ "level": {
+  "level_sekarang": 1,
+  "level": [
+   {
+    "level": 1,
+    "nama": "Vokal a, i, u",
+    "kemajuan": 0.188,
+    "bintang": 0,
+    "status": "terbuka"
+   },
+   {
+    "level": 2,
+    "nama": "Vokal e, o",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terkunci"
+   },
+   {
+    "level": 3,
+    "nama": "Konsonan bibir: m/b/p dan f/v",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terkunci"
+   },
+   {
+    "level": 4,
+    "nama": "Hembusan h, desis, dan huruf lidah",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terkunci"
+   },
+   {
+    "level": 5,
+    "nama": "Suku kata",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terkunci"
+   },
+   {
+    "level": 6,
+    "nama": "Kata",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terkunci"
+   }
+  ]
+ },
+ "level_kosong": {
+  "level_sekarang": 1,
+  "level": [
+   {
+    "level": 1,
+    "nama": "Vokal a, i, u",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terbuka"
+   },
+   {
+    "level": 2,
+    "nama": "Vokal e, o",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terkunci"
+   },
+   {
+    "level": 3,
+    "nama": "Konsonan bibir: m/b/p dan f/v",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terkunci"
+   },
+   {
+    "level": 4,
+    "nama": "Hembusan h, desis, dan huruf lidah",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terkunci"
+   },
+   {
+    "level": 5,
+    "nama": "Suku kata",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terkunci"
+   },
+   {
+    "level": 6,
+    "nama": "Kata",
+    "kemajuan": 0,
+    "bintang": 0,
+    "status": "terkunci"
+   }
+  ]
+ },
+ "model_kosong": {
+  "model": null
+ },
+ "percobaan": {
+  "perubahan": [
+   {
+    "bunyi": "a",
+    "tingkat": 1,
+    "berhasil": true,
+    "sebelum": 0.7693,
+    "sesudah": 0.9008,
+    "label": "sudah_bisa"
+   }
+  ],
+  "tingkat_berhasil": null,
+  "streak": 1,
+  "lelah": {
+   "lelah": false,
+   "alasan": []
+  },
+  "berikutnya": {
+   "item": {
+    "id": "t1-i",
+    "tingkat": 1,
+    "teks": "i",
+    "urutan": [
+     "i"
+    ],
+    "bantuan_visual": true,
+    "level": 1,
+    "dinilai_sebagian": false
+   },
+   "perkiraan_berhasil": 0.515,
+   "alasan": "zona",
+   "istirahat": false
+  }
+ },
+ "percobaan_gagal": {
+  "perubahan": [
+   {
+    "bunyi": "i",
+    "tingkat": 1,
+    "berhasil": false,
+    "sebelum": 0.3,
+    "sesudah": 0.1088,
+    "label": "sedang_dilatih"
+   }
+  ],
+  "tingkat_berhasil": null,
+  "streak": 1,
+  "lelah": {
+   "lelah": false,
+   "alasan": []
+  },
+  "berikutnya": {
+   "item": {
+    "id": "t1-u",
+    "tingkat": 1,
+    "teks": "u",
+    "urutan": [
+     "u"
+    ],
+    "bantuan_visual": true,
+    "level": 1,
+    "dinilai_sebagian": false
+   },
+   "perkiraan_berhasil": 0.515,
+   "alasan": "zona",
+   "istirahat": false
+  }
+ },
+ "peta": {
+  "bunyi": [
+   {
+    "bunyi": "a",
+    "tingkat": 1,
+    "p": 0.901,
+    "label": "sudah_bisa",
+    "tingkat_tuntas": 1,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.901,
+      "percobaan": 3,
+      "label": "sudah_bisa"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Sudah bisa",
+    "warna": "hijau"
+   },
+   {
+    "bunyi": "i",
+    "tingkat": 1,
+    "p": 0.109,
+    "label": "sedang_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.109,
+      "percobaan": 1,
+      "label": "sedang_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Sedang dilatih",
+    "warna": "merah"
+   },
+   {
+    "bunyi": "u",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "o",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "M",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "e",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "F",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "H",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "S",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "T",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   }
+  ],
+  "insight": {
+   "macet": [],
+   "naik": [
+    {
+     "bunyi": "a",
+     "tingkat": 1
+    }
+   ]
+  },
+  "tingkat_berhasil": null,
+  "hari_latihan_minggu_ini": 1,
+  "streak": 1,
+  "level": {
+   "level_sekarang": 1,
+   "level": [
+    {
+     "level": 1,
+     "nama": "Vokal a, i, u",
+     "kemajuan": 0.188,
+     "bintang": 0,
+     "status": "terbuka"
+    },
+    {
+     "level": 2,
+     "nama": "Vokal e, o",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terkunci"
+    },
+    {
+     "level": 3,
+     "nama": "Konsonan bibir: m/b/p dan f/v",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terkunci"
+    },
+    {
+     "level": 4,
+     "nama": "Hembusan h, desis, dan huruf lidah",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terkunci"
+    },
+    {
+     "level": 5,
+     "nama": "Suku kata",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terkunci"
+    },
+    {
+     "level": 6,
+     "nama": "Kata",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terkunci"
+    }
+   ]
+  },
+  "sintetis": false
+ },
+ "peta_kosong": {
+  "bunyi": [
+   {
+    "bunyi": "a",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "i",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "u",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "o",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "M",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "e",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "F",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "H",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "S",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   },
+   {
+    "bunyi": "T",
+    "tingkat": 0,
+    "p": null,
+    "label": "belum_dilatih",
+    "tingkat_tuntas": 0,
+    "rinci": [
+     {
+      "tingkat": 1,
+      "p": 0.3,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 2,
+      "p": 0.2,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 3,
+      "p": 0.15,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     },
+     {
+      "tingkat": 4,
+      "p": 0.1,
+      "percobaan": 0,
+      "label": "belum_dilatih"
+     }
+    ],
+    "teks_label": "Belum dilatih",
+    "warna": "abu"
+   }
+  ],
+  "insight": {
+   "macet": [],
+   "naik": []
+  },
+  "tingkat_berhasil": null,
+  "hari_latihan_minggu_ini": 0,
+  "streak": 0,
+  "level": {
+   "level_sekarang": 1,
+   "level": [
+    {
+     "level": 1,
+     "nama": "Vokal a, i, u",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terbuka"
+    },
+    {
+     "level": 2,
+     "nama": "Vokal e, o",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terkunci"
+    },
+    {
+     "level": 3,
+     "nama": "Konsonan bibir: m/b/p dan f/v",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terkunci"
+    },
+    {
+     "level": 4,
+     "nama": "Hembusan h, desis, dan huruf lidah",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terkunci"
+    },
+    {
+     "level": 5,
+     "nama": "Suku kata",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terkunci"
+    },
+    {
+     "level": 6,
+     "nama": "Kata",
+     "kemajuan": 0,
+     "bintang": 0,
+     "status": "terkunci"
+    }
+   ]
+  },
+  "sintetis": false
+ },
+ "riwayat": {
+  "harian": [
+   {
+    "tanggal": "2026-11-14",
+    "percobaan": 4,
+    "berhasil": 3,
+    "tingkat_berhasil": 0.75
+   }
+  ],
+  "per_bunyi": {
+   "a": [
+    {
+     "tanggal": "2026-11-14",
+     "tingkat": 1,
+     "p": 0.9008,
+     "kemajuan": 0.225
+    }
+   ],
+   "i": [
+    {
+     "tanggal": "2026-11-14",
+     "tingkat": 1,
+     "p": 0.1088,
+     "kemajuan": 0.027
+    }
+   ]
+  }
+ },
+ "saran_belajar": {
+  "fokus": [
+   {
+    "bunyi": "i",
+    "tingkat": 1,
+    "label": "sedang_dilatih",
+    "alasan": "lemah"
+   }
+  ],
+  "saran": [
+   {
+    "teks": "Ajak Raka mengucapkan bunyi vokal /i/ secara terisolasi di depan cermin untuk mengamati bentuk bibir dan posisi lidahnya.",
+    "rujukan": [
+     {
+      "judul": "Panduan Guru Pengembangan Wicara bagi Peserta Didik dengan Hambatan Pendengaran (Aini & Handriani, 2024)",
+      "url": "https://buku.kemdikbud.go.id",
+      "halaman": 96
+     }
+    ]
+   },
+   {
+    "teks": "Gunakan media kartu bergambar yang memuat kosakata berawalan bunyi /i/ saat melatih Raka mengucapkan bunyi tersebut.",
+    "rujukan": [
+     {
+      "judul": "Panduan Guru Pengembangan Wicara bagi Peserta Didik dengan Hambatan Pendengaran (Aini & Handriani, 2024)",
+      "url": "https://buku.kemdikbud.go.id",
+      "halaman": 96
+     }
+    ]
+   },
+   {
+    "teks": "Latih Raka mengucapkan bunyi /i/ menggunakan bantuan gambar secara konsisten karena masih dalam tahap sedang dilatih.",
+    "rujukan": []
+   }
+  ],
+  "sumber": "llm"
+ },
+ "sesi": {
+  "berikutnya": {
+   "item": {
+    "id": "t1-a",
+    "tingkat": 1,
+    "teks": "a",
+    "urutan": [
+     "a"
+    ],
+    "bantuan_visual": true,
+    "level": 1,
+    "dinilai_sebagian": false
+   },
+   "perkiraan_berhasil": 0.515,
+   "alasan": "zona",
+   "istirahat": false
+  }
+ },
+ "tanya": {
+  "jawaban": "Halo! Berdasarkan data latihan, bunyi yang paling perlu perhatian bagi Raka adalah bunyi i karena masih lemah dan sedang dilatih pada tahap bunyi tunggal dengan bantuan gambar.",
+  "rujukan": [],
+  "sumber": "llm",
+  "data": {
+   "level": {
+    "nomor": 1,
+    "nama": "Vokal a, i, u"
+   },
+   "level_tuntas": [],
+   "sudah_bisa": [
+    "a (tahap bunyi tunggal dengan bantuan gambar)"
+   ],
+   "sedang_dilatih": [
+    "i (tahap bunyi tunggal dengan bantuan gambar)"
+   ],
+   "perlu_perhatian": [
+    "i"
+   ],
+   "alasan_perhatian": {
+    "i": "lemah"
+   },
+   "tren_bunyi": {
+    "a": "baru dilatih",
+    "i": "baru dilatih"
+   },
+   "keberhasilan_minggu_ini": "cukup",
+   "hari_latihan_minggu_ini": 1,
+   "streak": 1
+  }
+ },
+ "tugas_usulan": {
+  "tugas": [
+   {
+    "item": {
+     "id": "t1-i",
+     "tingkat": 1,
+     "teks": "i",
+     "urutan": [
+      "i"
+     ],
+     "bantuan_visual": true,
+     "level": 1,
+     "dinilai_sebagian": false
+    },
+    "bunyi_fokus": "i",
+    "label": "sedang_dilatih",
+    "hari_sejak_latihan": 0,
+    "alasan": "Raka sedang melatih bunyi ini hari ini.",
+    "teks_label": "Sedang dilatih"
+   },
+   {
+    "item": {
+     "id": "t1-a",
+     "tingkat": 1,
+     "teks": "a",
+     "urutan": [
+      "a"
+     ],
+     "bantuan_visual": true,
+     "level": 1,
+     "dinilai_sebagian": false
+    },
+    "bunyi_fokus": "a",
+    "label": "sudah_bisa",
+    "hari_sejak_latihan": 0,
+    "alasan": "Raka sudah bisa bunyi ini hari ini.",
+    "teks_label": "Sudah bisa"
+   },
+   {
+    "item": {
+     "id": "t1-u",
+     "tingkat": 1,
+     "teks": "u",
+     "urutan": [
+      "u"
+     ],
+     "bantuan_visual": true,
+     "level": 1,
+     "dinilai_sebagian": false
+    },
+    "bunyi_fokus": "u",
+    "label": "belum_dilatih",
+    "hari_sejak_latihan": null,
+    "alasan": "Raka belum pernah melatih bunyi ini.",
+    "teks_label": "Belum dilatih"
+   }
+  ],
+  "sumber": "llm"
+ }
+}

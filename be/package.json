@@ -1,0 +1,48 @@
+{
+  "name": "satu-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "migrate": "tsx scripts/migrate.ts",
+    "seed": "tsx scripts/seed.ts",
+    "test": "vitest run",
+    "check": "tsc --noEmit",
+    "check:db": "tsx scripts/check-db.ts",
+    "check:db:attempt": "tsx scripts/check-db-attempt.ts",
+    "docs:examples": "tsx scripts/gen-docs-examples.ts",
+    "sync:curriculum": "tsx scripts/sync-curriculum.ts",
+    "check:ai": "tsx scripts/check-ai.ts",
+    "device-token": "tsx scripts/device-token.ts",
+    "docs:md": "tsx scripts/gen-api-md.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.23.1",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "@types/supertest": "^7.2.1",
+    "@types/swagger-ui-express": "^4.1.8",
+    "supertest": "^7.3.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}
